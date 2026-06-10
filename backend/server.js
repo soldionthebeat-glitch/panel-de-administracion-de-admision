@@ -75,9 +75,9 @@ app.get('/api/test', async (req, res) => {
 
 // ✅ LOGIN - Acceso al panel de fundador
 app.post('/api/fundador/login', (req, res) => {
-  const { accessCode } = req.body || {};
+  const accessCode = String(req.body?.accessCode || '').trim();
 
-  if (accessCode === FOUNDER_ACCESS_CODE) {
+  if (accessCode && accessCode === FOUNDER_ACCESS_CODE) {
     return res.json({
       success: true,
       token: FOUNDER_SESSION_TOKEN,
