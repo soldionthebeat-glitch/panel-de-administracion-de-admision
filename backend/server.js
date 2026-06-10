@@ -10,6 +10,8 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const FOUNDER_ACCESS_CODE = process.env.FOUNDER_ACCESS_CODE || 'fundador2026';
+const FOUNDER_SESSION_TOKEN = process.env.FOUNDER_SESSION_TOKEN || 'local-founder-session';
 
 // ================================
 // MIDDLEWARE
@@ -19,6 +21,20 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'frontend')));
 app.use('/docs', express.static(path.join(__dirname, '..', 'docs')));
+
+function requireFounderAuth(req, res, next) {
+  const authHeader = req.headers.authorization || '';
+  const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : '';
+
+  if (token === FOUNDER_SESSION_TOKEN) {
+    return next();
+  }
+
+  return res.status(401).json({
+    success: false,
+    message: 'Acceso de fundador requerido'
+  });
+}
 
 // ================================
 // CONEXIÓN A NEON (PostgreSQL)
@@ -55,6 +71,28 @@ app.get('/api/test', async (req, res) => {
       error: err.message 
     });
   }
+});
+
+// ✅ LOGIN - Acceso al panel de fundador
+app.post('/api/fundador/login', (req, res) => {
+  const { accessCode } = req.body || {};
+
+  if (accessCode === FOUNDER_ACCESS_CODE) {
+    return res.json({
+      success: true,
+      token: FOUNDER_SESSION_TOKEN,
+      message: 'Acceso concedido'
+    });
+  }
+
+  return res.status(401).json({
+    success: false,
+    message: 'Código de fundador incorrecto'
+  });
+});
+
+app.get('/api/fundador/session', requireFounderAuth, (req, res) => {
+  res.json({ success: true });
 });
 
 // ✅ POST - Recibir nueva solicitud del formulario
@@ -127,7 +165,7 @@ app.post('/api/aplicantes', async (req, res) => {
 });
 
 // ✅ GET - Obtener todas las solicitudes (para panel admin)
-app.get('/api/aplicantes', async (req, res) => {
+app.get('/api/aplicantes', requireFounderAuth, async (req, res) => {
   try {
     const { estado, modelo, buscar } = req.query;
 
@@ -171,7 +209,7 @@ app.get('/api/aplicantes', async (req, res) => {
 });
 
 // ✅ GET - Obtener una solicitud específica
-app.get('/api/aplicantes/:id', async (req, res) => {
+app.get('/api/aplicantes/:id', requireFounderAuth, async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -202,7 +240,7 @@ app.get('/api/aplicantes/:id', async (req, res) => {
 });
 
 // ✅ PUT - Actualizar estado de solicitud
-app.put('/api/aplicantes/:id/estado', async (req, res) => {
+app.put('/api/aplicantes/:id/estado', requireFounderAuth, async (req, res) => {
   try {
     const { id } = req.params;
     const { estado, notas } = req.body;
@@ -238,7 +276,7 @@ app.put('/api/aplicantes/:id/estado', async (req, res) => {
 });
 
 // ✅ GET - Estadísticas para dashboard
-app.get('/api/estadisticas', async (req, res) => {
+app.get('/api/estadisticas', requireFounderAuth, async (req, res) => {
   try {
     const queries = {
       total: 'SELECT COUNT(*) as total FROM aplicantes',
@@ -310,7 +348,7 @@ app.post('/api/enviar-email', async (req, res) => {
 });
 
 // ✅ GET - Exportar datos como CSV
-app.get('/api/exportar-csv', async (req, res) => {
+app.get('/api/exportar-csv', requireFounderAuth, async (req, res) => {
   try {
     const result = await pool.query(`
       SELECT 
