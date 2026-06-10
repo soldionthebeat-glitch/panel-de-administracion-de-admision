@@ -1,13 +1,11 @@
-// ================================
-// 🔌 CONFIGURACIÓN API - FORMULARIO
+﻿// ================================
+// ðŸ”Œ CONFIGURACIÃ“N API - FORMULARIO
 // ================================
 // Incluye esto en formulario-admision-productores.html
 
 const API_CONFIG = {
-  // Cambiar según tu ambiente
-  BASE_URL: process.env.NODE_ENV === 'production'
-    ? 'https://tu-dominio.com/api'  // URL producción
-    : 'http://localhost:5000/api',  // URL local
+  // Cambiar segÃºn tu ambiente
+  BASE_URL: window.PRODUCERS_GO_CONFIG?.API_BASE_URL || 'http://localhost:5000/api',
   
   TIMEOUT: 10000 // 10 segundos
 };
@@ -18,7 +16,7 @@ const API_CONFIG = {
 
 async function enviarAplicanteAAPI(datos) {
   try {
-    console.log('📤 Enviando solicitud a API...', datos);
+    console.log('ðŸ“¤ Enviando solicitud a API...', datos);
 
     const response = await fetch(`${API_CONFIG.BASE_URL}/aplicantes`, {
       method: 'POST',
@@ -36,24 +34,24 @@ async function enviarAplicanteAAPI(datos) {
 
     const result = await response.json();
     
-    console.log('✅ Solicitud guardada en BD:', result);
+    console.log('âœ… Solicitud guardada en BD:', result);
     
     return {
       success: true,
       id: result.id,
-      message: '✅ Solicitud enviada correctamente'
+      message: 'âœ… Solicitud enviada correctamente'
     };
 
   } catch (error) {
-    console.error('❌ Error enviando a API:', error);
+    console.error('âŒ Error enviando a API:', error);
 
-    // Fallback a localStorage si API no está disponible
-    console.log('⚠️ Guardando en localStorage como backup...');
+    // Fallback a localStorage si API no estÃ¡ disponible
+    console.log('âš ï¸ Guardando en localStorage como backup...');
     guardarEnLocalStorage(datos);
 
     return {
       success: false,
-      message: `⚠️ API no disponible. Datos guardados localmente. ${error.message}`,
+      message: `âš ï¸ API no disponible. Datos guardados localmente. ${error.message}`,
       local: true
     };
   }
@@ -72,14 +70,14 @@ function guardarEnLocalStorage(datos) {
       savedLocally: true
     });
     localStorage.setItem('pg_applications', JSON.stringify(aplicantes));
-    console.log('📱 Guardado en localStorage');
+    console.log('ðŸ“± Guardado en localStorage');
   } catch (error) {
     console.error('Error guardando en localStorage:', error);
   }
 }
 
 // ================================
-// SINCRONIZAR localStorage → API
+// SINCRONIZAR localStorage â†’ API
 // ================================
 
 async function sincronizarConAPI() {
@@ -87,7 +85,7 @@ async function sincronizarConAPI() {
     const aplicantes = JSON.parse(localStorage.getItem('pg_applications')) || [];
     const noEnviados = aplicantes.filter(a => a.savedLocally);
 
-    console.log(`🔄 Sincronizando ${noEnviados.length} solicitudes...`);
+    console.log(`ðŸ”„ Sincronizando ${noEnviados.length} solicitudes...`);
 
     for (const aplicante of noEnviados) {
       const resultado = await enviarAplicanteAAPI(aplicante);
@@ -99,7 +97,7 @@ async function sincronizarConAPI() {
     }
 
     localStorage.setItem('pg_applications', JSON.stringify(aplicantes));
-    console.log('✅ Sincronización completada');
+    console.log('âœ… SincronizaciÃ³n completada');
 
   } catch (error) {
     console.error('Error sincronizando:', error);
@@ -107,7 +105,7 @@ async function sincronizarConAPI() {
 }
 
 // ================================
-// ENVIAR EMAIL (PRÓXIMO)
+// ENVIAR EMAIL (PRÃ“XIMO)
 // ================================
 
 async function enviarEmailConfirmacion(email, nombre) {
@@ -145,3 +143,4 @@ if (typeof module !== 'undefined' && module.exports) {
     enviarEmailConfirmacion
   };
 }
+

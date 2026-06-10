@@ -4,6 +4,7 @@
 
 const express = require('express');
 const cors = require('cors');
+const fs = require('fs');
 const path = require('path');
 const { Pool } = require('pg');
 require('dotenv').config();
@@ -12,6 +13,12 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const FOUNDER_ACCESS_CODE = process.env.FOUNDER_ACCESS_CODE || 'fundador2026';
 const FOUNDER_SESSION_TOKEN = process.env.FOUNDER_SESSION_TOKEN || 'local-founder-session';
+const frontendPath = path.join(__dirname, '..', 'frontend');
+const rootPath = path.join(__dirname, '..');
+const publicPath = process.env.FRONTEND_DIR
+  || (fs.existsSync(path.join(frontendPath, 'index.html')) && frontendPath)
+  || (fs.existsSync(path.join(rootPath, 'index.html')) && rootPath)
+  || __dirname;
 
 // ================================
 // MIDDLEWARE
@@ -19,7 +26,7 @@ const FOUNDER_SESSION_TOKEN = process.env.FOUNDER_SESSION_TOKEN || 'local-founde
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '..', 'frontend')));
+app.use(express.static(publicPath));
 app.use('/docs', express.static(path.join(__dirname, '..', 'docs')));
 
 function requireFounderAuth(req, res, next) {
