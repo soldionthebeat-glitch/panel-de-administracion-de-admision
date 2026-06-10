@@ -4,6 +4,7 @@
 
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const { Pool } = require('pg');
 require('dotenv').config();
 
@@ -16,7 +17,8 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, '..', 'frontend')));
+app.use('/docs', express.static(path.join(__dirname, '..', 'docs')));
 
 // ================================
 // CONEXIÓN A NEON (PostgreSQL)

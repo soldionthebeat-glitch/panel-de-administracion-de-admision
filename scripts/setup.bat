@@ -1,4 +1,5 @@
 @echo off
+pushd "%~dp0..\backend"
 REM ================================
 REM 🚀 SETUP RÁPIDO - NEON + API
 REM ================================
