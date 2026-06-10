@@ -1,0 +1,90 @@
+╔═══════════════════════════════════════════════════════════════════════╗
+║                  🔗 CONECTAR A GITHUB - INSTRUCCIONES                 ║
+╚═══════════════════════════════════════════════════════════════════════╝
+
+Tu proyecto está listo para vincular a GitHub.
+
+═══════════════════════════════════════════════════════════════════════
+
+⚡ OPCIÓN 1: AUTOMÁTICO (Más Fácil)
+
+Windows:
+  ✓ Haz doble clic en: setup-github.bat
+
+Mac/Linux:
+  ✓ En terminal: chmod +x setup-github.sh
+  ✓ Luego: ./setup-github.sh
+
+═══════════════════════════════════════════════════════════════════════
+
+📝 OPCIÓN 2: MANUAL (Paso a Paso)
+
+PASO 1: Ve a https://github.com/new
+  - Nombre: producers-go
+  - Descripción: Sistema de Admisión de Productores con IA
+  - Visibilidad: Public
+  - NO inicialices con README
+  - Click: Create Repository
+  - Copia la URL (https://github.com/tuusuario/producers-go.git)
+
+PASO 2: Terminal / CMD en esta carpeta
+  
+  git init
+  git add .
+  git config --global user.email "tu-email@gmail.com"
+  git config --global user.name "Tu Nombre"
+  git commit -m "🚀 Initial commit"
+  git remote add origin https://github.com/tuusuario/producers-go.git
+  git branch -M main
+  git push -u origin main
+
+PASO 3: Confirmar
+  - Ve a tu repo en GitHub
+  - Verifica que todos los archivos estén
+  - ✅ ¡Listo!
+
+═══════════════════════════════════════════════════════════════════════
+
+🆘 PROBLEMAS
+
+❌ "command not found: git"
+  → Instala Git desde https://git-scm.com/
+
+❌ "fatal: not a git repository"
+  → Asegúrate de estar en la carpeta correcta:
+    cd "c:\Users\apell\OneDrive\Escritorio\Codigos\pagina admision"
+
+❌ "error: remote origin already exists"
+  → Ejecuta: git remote remove origin
+  → Luego: git remote add origin https://github.com/...
+
+❌ "fatal: The current branch main does not have any upstream"
+  → Ejecuta: git push -u origin main
+
+═══════════════════════════════════════════════════════════════════════
+
+📚 MÁS INFORMACIÓN
+
+Guía completa: GITHUB-SETUP.md
+Documentación: README-GITHUB.md
+
+═══════════════════════════════════════════════════════════════════════
+
+✅ DESPUÉS DE CONECTAR A GITHUB
+
+1. Comparte el link de tu repositorio
+2. Agrega colaboradores (Settings → Collaborators)
+3. Deploy automático a Render (opcional)
+4. Configura CI/CD si lo deseas
+
+═══════════════════════════════════════════════════════════════════════
+
+🎉 ¡A PRODUCCIÓN!
+
+Una vez en GitHub, el proyecto está listo para:
+  ✓ Compartir con el equipo
+  ✓ Deploy automático
+  ✓ Versionado y control
+  ✓ Colaboración
+
+═══════════════════════════════════════════════════════════════════════
