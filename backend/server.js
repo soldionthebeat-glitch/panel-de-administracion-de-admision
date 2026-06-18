@@ -16,8 +16,8 @@ const FOUNDER_SESSION_TOKEN = process.env.FOUNDER_SESSION_TOKEN || 'local-founde
 const frontendPath = path.join(__dirname, '..', 'frontend');
 const rootPath = path.join(__dirname, '..');
 const publicPath = process.env.FRONTEND_DIR
-  || (fs.existsSync(path.join(frontendPath, 'index.html')) && frontendPath)
   || (fs.existsSync(path.join(rootPath, 'index.html')) && rootPath)
+  || (fs.existsSync(path.join(frontendPath, 'index.html')) && frontendPath)
   || __dirname;
 
 // ================================

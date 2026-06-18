@@ -187,7 +187,7 @@
 
             <div class="public-link">
                 <span>Link publico de admision</span>
-                <a href="formulario-admision-productores.html">Abrir formulario para productores</a>
+                <a href="frontend/formulario-admision-productores.html">Abrir formulario para productores</a>
             </div>
         </section>
 
@@ -201,7 +201,7 @@
 
                 <div class="actions">
                     <button type="submit">Entrar al panel</button>
-                    <a class="button" href="formulario-admision-productores.html">Ir al formulario publico</a>
+                    <a class="button" href="frontend/formulario-admision-productores.html">Ir al formulario publico</a>
                 </div>
 
                 <div id="message" class="message"></div>
@@ -210,7 +210,7 @@
         </section>
     </main>
 
-    <script src="config.js"></script>
+    <script src="frontend/config.js"></script>
     <script>
         const API_BASE_URL = window.PRODUCERS_GO_CONFIG?.API_BASE_URL || 'http://localhost:5000/api';
         const FOUNDER_SESSION_KEY = 'pg_founder_session';
@@ -241,7 +241,7 @@
                 }
 
                 localStorage.setItem(FOUNDER_SESSION_KEY, result.token);
-                window.location.href = 'panel-admin.html';
+                window.location.href = 'frontend/panel-admin.html';
             } catch (error) {
                 message.textContent = error.message || 'No se pudo iniciar sesion';
             }
