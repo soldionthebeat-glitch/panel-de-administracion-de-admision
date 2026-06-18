@@ -11,8 +11,8 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const FOUNDER_ACCESS_CODE = process.env.FOUNDER_ACCESS_CODE;
-const FOUNDER_SESSION_TOKEN = process.env.FOUNDER_SESSION_TOKEN;
+const FOUNDER_ACCESS_CODE = String(process.env.FOUNDER_ACCESS_CODE || '').trim();
+const FOUNDER_SESSION_TOKEN = String(process.env.FOUNDER_SESSION_TOKEN || '').trim();
 const frontendPath = path.join(__dirname, '..', 'frontend');
 const rootPath = path.join(__dirname, '..');
 const publicPath = process.env.FRONTEND_DIR

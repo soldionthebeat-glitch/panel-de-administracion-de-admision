@@ -245,6 +245,7 @@
         loginForm.addEventListener('submit', async function(event) {
             event.preventDefault();
             message.textContent = '';
+            sessionMessage.style.display = 'none';
 
             const accessCode = document.getElementById('accessCode').value.trim();
             if (!accessCode) {
@@ -273,6 +274,7 @@
                 localStorage.setItem(FOUNDER_SESSION_KEY, result.token);
                 window.location.href = 'frontend/panel-admin.html';
             } catch (error) {
+                localStorage.removeItem(FOUNDER_SESSION_KEY);
                 if (error.name === 'AbortError') {
                     message.textContent = 'El backend no respondio. Revisa que Render este desplegado y activo.';
                 } else {
