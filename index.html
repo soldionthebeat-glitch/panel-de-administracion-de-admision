@@ -205,7 +205,7 @@
             </div>
 
             <div class="public-link">
-                <span>Link publico de admision</span>
+                <span>Link pÃºblico de admisiÃ³n</span>
                 <a href="frontend/formulario-admision-productores.html">Abrir formulario para productores</a>
             </div>
         </section>
@@ -219,7 +219,7 @@
                 <input id="accessCode" name="accessCode" type="password" autocomplete="current-password" required>
 
                 <div class="actions">
-                    <button type="submit">Entrar al panel</button>
+                    <button id="loginButton" type="submit">Entrar al panel</button>
                     <a class="button" href="frontend/formulario-admision-productores.html">Ir al formulario publico</a>
                 </div>
 
@@ -231,9 +231,10 @@
 
     <script src="frontend/config.js"></script>
     <script>
-        const API_BASE_URL = window.PRODUCERS_GO_CONFIG?.API_BASE_URL || 'http://localhost:5000/api';
+        const API_BASE_URL = window.PRODUCERS_GO_CONFIG?.API_BASE_URL || 'https://panel-de-administracion-de-admision.onrender.com/api';
         const FOUNDER_SESSION_KEY = 'pg_founder_session';
         const loginForm = document.getElementById('founderLoginForm');
+        const loginButton = document.getElementById('loginButton');
         const message = document.getElementById('message');
         const sessionMessage = document.getElementById('sessionMessage');
 
@@ -246,23 +247,41 @@
             message.textContent = '';
 
             const accessCode = document.getElementById('accessCode').value.trim();
+            if (!accessCode) {
+                message.textContent = 'IngresÃ¡ el cÃ³digo de acceso.';
+                return;
+            }
+
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 15000);
+            loginButton.disabled = true;
+            loginButton.textContent = 'Conectando...';
 
             try {
                 const response = await fetch(`${API_BASE_URL}/fundador/login`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ accessCode })
+                    body: JSON.stringify({ accessCode }),
+                    signal: controller.signal
                 });
                 const result = await response.json().catch(() => ({}));
 
                 if (!response.ok || !result.success) {
-                    throw new Error(result.message || 'Codigo incorrecto o backend no disponible');
+                    throw new Error(result.message || 'Codigo incorrecto o backend no disponible.');
                 }
 
                 localStorage.setItem(FOUNDER_SESSION_KEY, result.token);
                 window.location.href = 'frontend/panel-admin.html';
             } catch (error) {
-                message.textContent = error.message || 'No se pudo iniciar sesion';
+                if (error.name === 'AbortError') {
+                    message.textContent = 'El backend no respondio. Revisa que Render este desplegado y activo.';
+                } else {
+                    message.textContent = error.message || 'No se pudo iniciar sesion.';
+                }
+            } finally {
+                clearTimeout(timeoutId);
+                loginButton.disabled = false;
+                loginButton.textContent = 'Entrar al panel';
             }
         });
     </script>

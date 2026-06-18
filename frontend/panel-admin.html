@@ -496,11 +496,11 @@
     <div class="container">
         <div class="header">
             <div>
-                <h1>ðŸŽµ PRODUCERS GO - Panel Administrativo</h1>
+                <h1>PRODUCERS GO - Panel Administrativo</h1>
                 <p>Sistema de EvaluaciÃ³n AutomÃ¡tica con IA</p>
             </div>
             <div class="header-actions">
-                <button class="btn btn-secondary" onclick="exportData()">ðŸ“¥ Exportar</button>
+                <button class="btn btn-secondary" onclick="exportData()">Exportar</button>
                 <a href="formulario-admision-productores.html" class="btn btn-primary">Link de AdmisiÃ³n</a>
                 <button class="btn btn-secondary" onclick="logoutFounder()">Cerrar SesiÃ³n</button>
             </div>
@@ -546,7 +546,7 @@
             <!-- Filtros -->
             <div class="filters">
                 <div class="filter-group">
-                    <label>ðŸ” Buscar:</label>
+                    <label>Buscar:</label>
                     <input type="text" id="searchInput" placeholder="Nombre, email...">
                 </div>
                 <div class="filter-group">
@@ -575,7 +575,7 @@
 
             <!-- Tabla de Aplicaciones -->
             <div id="applicationsContainer">
-                <div class="no-data">ðŸ“­ No hay solicitudes. Las solicitudes aparecerÃ¡n aquÃ­ cuando se envÃ­en a travÃ©s del formulario.</div>
+                <div class="no-data">No hay solicitudes. Las solicitudes apareceran aqui cuando se envien a traves del formulario.</div>
             </div>
         </div>
     </div>
@@ -593,7 +593,7 @@
 
     <script src="config.js"></script>
     <script>
-        const API_BASE_URL = window.PRODUCERS_GO_CONFIG?.API_BASE_URL || 'http://localhost:5000/api';
+        const API_BASE_URL = window.PRODUCERS_GO_CONFIG?.API_BASE_URL || 'https://panel-de-administracion-de-admision.onrender.com/api';
         const FOUNDER_SESSION_KEY = 'pg_founder_session';
         let currentApplications = [];
         let visibleApplications = [];
@@ -694,7 +694,7 @@
             visibleApplications = applications;
 
             if (applications.length === 0) {
-                container.innerHTML = '<div class="no-data">ðŸ“­ No hay solicitudes. Las solicitudes aparecerÃ¡n aquÃ­ cuando se envÃ­en a travÃ©s del formulario.</div>';
+                container.innerHTML = '<div class="no-data">No hay solicitudes. Las solicitudes apareceran aqui cuando se envien a traves del formulario.</div>';
                 return;
             }
 
@@ -844,7 +844,7 @@
 
             let detailsHtml = `
                 <div class="detail-section">
-                    <h3>ðŸ“‹ InformaciÃ³n Personal</h3>
+                    <h3>Informacion Personal</h3>
                     <p><span class="detail-label">Nombre:</span> ${app.personalData?.nombre || 'N/A'}</p>
                     <p><span class="detail-label">Nombre ArtÃ­stico:</span> ${app.personalData?.nombreArtistico || 'N/A'}</p>
                     <p><span class="detail-label">Email:</span> ${app.personalData?.email || 'N/A'}</p>
@@ -854,26 +854,26 @@
                 </div>
 
                 <div class="detail-section">
-                    <h3>ðŸ¤– EvaluaciÃ³n AutomÃ¡tica de IA</h3>
+                    <h3>Evaluacion Automatica de IA</h3>
                     <div class="scores-grid">
                         <div class="score-item">
-                            <label>ðŸŽ¨ ArtÃ­stica</label>
+                            <label>Artistica</label>
                             <div class="score-number">${(scores.artistico || 0).toFixed(1)}</div>
                         </div>
                         <div class="score-item">
-                            <label>âš™ï¸ TÃ©cnica</label>
+                            <label>Tecnica</label>
                             <div class="score-number">${(scores.tecnico || 0).toFixed(1)}</div>
                         </div>
                         <div class="score-item">
-                            <label>ðŸ‘¥ Humana</label>
+                            <label>Humana</label>
                             <div class="score-number">${(scores.humano || 0).toFixed(1)}</div>
                         </div>
                         <div class="score-item">
-                            <label>ðŸ“ Organizativa</label>
+                            <label>Organizativa</label>
                             <div class="score-number">${(scores.organizativo || 0).toFixed(1)}</div>
                         </div>
                         <div class="score-item">
-                            <label>ðŸ’° Comercial</label>
+                            <label>Comercial</label>
                             <div class="score-number">${(scores.comercial || 0).toFixed(1)}</div>
                         </div>
                     </div>
@@ -890,13 +890,13 @@
                 </div>
 
                 <div class="action-buttons">
-                    <button class="btn-small btn-approve" onclick="updateStatus(${index}, 'approved')">âœ… Aprobar</button>
+                    <button class="btn-small btn-approve" onclick="updateStatus(${index}, 'approved')">Aprobar</button>
                     <button class="btn-small btn-review" onclick="updateStatus(${index}, 'review')">â³ En RevisiÃ³n</button>
-                    <button class="btn-small btn-reject" onclick="updateStatus(${index}, 'rejected')">âŒ Rechazar</button>
+                    <button class="btn-small btn-reject" onclick="updateStatus(${index}, 'rejected')">Rechazar</button>
                 </div>
 
                 <div class="detail-section" style="margin-top: 20px;">
-                    <h3>ðŸ“ Fecha de Solicitud</h3>
+                    <h3>Fecha de Solicitud</h3>
                     <p>${app.timestamp || 'N/A'}</p>
                     <p><span class="detail-label">ID Solicitud:</span> #${app.id}</p>
                     <p><span class="detail-label">Estado Actual:</span> <span class="status-badge status-${app.status || 'pending'}">${getStatusLabel(app.status)}</span></p>
@@ -933,10 +933,10 @@
 
         function getStatusLabel(status) {
             const labels = {
-                'pending': 'â³ Pendiente',
-                'review': 'ðŸ” En RevisiÃ³n',
-                'approved': 'âœ… Aprobado',
-                'rejected': 'âŒ Rechazado'
+                'pending': 'Pendiente',
+                'review': 'En Revision',
+                'approved': 'Aprobado',
+                'rejected': 'Rechazado'
             };
             return labels[status] || 'Desconocido';
         }
