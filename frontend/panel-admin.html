@@ -621,7 +621,7 @@
             const result = await response.json().catch(() => ({}));
             if (response.status === 401) {
                 localStorage.removeItem(FOUNDER_SESSION_KEY);
-                window.location.href = 'index.html';
+                window.location.href = '../index.html';
                 throw new Error('Sesión de fundador requerida');
             }
             if (!response.ok || result.success === false) {
@@ -632,13 +632,13 @@
 
         function requireFounderSession() {
             if (!localStorage.getItem(FOUNDER_SESSION_KEY)) {
-                window.location.href = 'index.html';
+                window.location.href = '../index.html';
             }
         }
 
         function logoutFounder() {
             localStorage.removeItem(FOUNDER_SESSION_KEY);
-            window.location.href = 'index.html';
+            window.location.href = '../index.html';
         }
 
         function normalizarAplicante(row) {
