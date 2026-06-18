@@ -1,0 +1,14 @@
+{
+  "name": "panel-de-administracion-de-admision",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontend y backend para panel de administracion de admision",
+  "scripts": {
+    "install:backend": "npm install --prefix backend",
+    "build": "npm install --prefix backend",
+    "start": "npm start --prefix backend"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
