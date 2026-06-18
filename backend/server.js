@@ -13,12 +13,13 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const FOUNDER_ACCESS_CODE = String(process.env.FOUNDER_ACCESS_CODE || '').trim();
 const FOUNDER_SESSION_TOKEN = String(process.env.FOUNDER_SESSION_TOKEN || '').trim();
+const SERVE_FRONTEND = String(process.env.SERVE_FRONTEND || '').toLowerCase() === 'true';
 const frontendPath = path.join(__dirname, '..', 'frontend');
 const rootPath = path.join(__dirname, '..');
-const publicPath = process.env.FRONTEND_DIR
-  || (fs.existsSync(path.join(rootPath, 'index.html')) && rootPath)
-  || (fs.existsSync(path.join(frontendPath, 'index.html')) && frontendPath)
-  || __dirname;
+const configuredFrontendPath = process.env.FRONTEND_DIR || '';
+const publicPath = configuredFrontendPath
+  || (fs.existsSync(path.join(rootPath, 'index.html')) ? rootPath : '')
+  || (fs.existsSync(path.join(frontendPath, 'index.html')) ? frontendPath : '');
 
 // ================================
 // MIDDLEWARE
@@ -26,8 +27,11 @@ const publicPath = process.env.FRONTEND_DIR
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(publicPath));
-app.use('/docs', express.static(path.join(__dirname, '..', 'docs')));
+
+if (SERVE_FRONTEND && publicPath) {
+  app.use(express.static(publicPath));
+  app.use('/docs', express.static(path.join(__dirname, '..', 'docs')));
+}
 
 if (!FOUNDER_ACCESS_CODE || !FOUNDER_SESSION_TOKEN) {
   console.error('Faltan FOUNDER_ACCESS_CODE y/o FOUNDER_SESSION_TOKEN en el archivo .env');
@@ -66,6 +70,14 @@ pool.on('error', (err) => {
 // ================================
 // RUTAS API
 // ================================
+
+app.get('/', (req, res) => {
+  res.json({
+    status: 'OK',
+    service: 'PRODUCERS GO API',
+    message: 'Backend listo. El frontend debe publicarse por separado.'
+  });
+});
 
 // ✅ TEST - Verificar conexión
 app.get('/api/test', async (req, res) => {
@@ -131,6 +143,21 @@ app.post('/api/aplicantes', async (req, res) => {
         $12, $13, $14,
         NOW(), NOW()
       )
+      ON CONFLICT (email) DO UPDATE SET
+        nombre = EXCLUDED.nombre,
+        nombre_artistico = EXCLUDED.nombre_artistico,
+        whatsapp = EXCLUDED.whatsapp,
+        edad = EXCLUDED.edad,
+        pais = EXCLUDED.pais,
+        score_artistico = EXCLUDED.score_artistico,
+        score_tecnico = EXCLUDED.score_tecnico,
+        score_humano = EXCLUDED.score_humano,
+        score_organizativo = EXCLUDED.score_organizativo,
+        score_comercial = EXCLUDED.score_comercial,
+        puntaje_final = EXCLUDED.puntaje_final,
+        modelo_clasificacion = EXCLUDED.modelo_clasificacion,
+        estado = EXCLUDED.estado,
+        updated_at = NOW()
       RETURNING id, created_at
     `;
 
