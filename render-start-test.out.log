@@ -1,0 +1,14 @@
+
+╔════════════════════════════════════════╗
+║  🚀 API PRODUCERS GO - NEON READY     ║
+╠════════════════════════════════════════╣
+║  Server running on port 5051              
+║  Database: PostgreSQL (Neon)
+║  Endpoints ready for frontend
+╚════════════════════════════════════════╝
+
+📍 Test: http://localhost:5051/api/test
+📍 POST formulario: POST /api/aplicantes
+📍 GET solicitudes: GET /api/aplicantes
+📍 Dashboard: GET /api/estadisticas
+  
