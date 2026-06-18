@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRODUCERS GO - Acceso Fundador</title>
     <style>
+        :root {
+            --bg: #06111f;
+            --panel: rgba(255, 255, 255, 0.82);
+            --panel-strong: rgba(255, 255, 255, 0.94);
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --accent: #22d3ee;
+            --text: #102033;
+            --muted: #64748b;
+            --line: rgba(148, 163, 184, 0.35);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,8 +26,11 @@
         body {
             min-height: 100vh;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #151515 0%, #2b2b2b 100%);
-            color: #1f1f1f;
+            background:
+                radial-gradient(circle at 12% 15%, rgba(34, 211, 238, 0.20), transparent 30%),
+                radial-gradient(circle at 85% 20%, rgba(37, 99, 235, 0.24), transparent 32%),
+                linear-gradient(135deg, #06111f 0%, #0f2747 54%, #081826 100%);
+            color: var(--text);
             display: grid;
             place-items: center;
             padding: 24px;
@@ -25,14 +40,17 @@
             width: min(980px, 100%);
             display: grid;
             grid-template-columns: 1fr 420px;
-            background: #fff;
+            background: var(--panel);
+            border: 1px solid var(--line);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 24px 70px rgba(2, 8, 23, 0.42);
+            backdrop-filter: blur(18px);
         }
 
         .brand {
-            background: linear-gradient(135deg, #ff6b00 0%, #ff9400 100%);
+            background:
+                linear-gradient(135deg, rgba(37, 99, 235, 0.92) 0%, rgba(34, 211, 238, 0.74) 100%);
             color: #fff;
             padding: 48px;
             display: flex;
@@ -85,19 +103,19 @@
         }
 
         .login h2 {
-            color: #ff6b00;
+            color: var(--primary);
             font-size: 1.8rem;
             margin-bottom: 10px;
         }
 
         .login p {
-            color: #666;
+            color: var(--muted);
             margin-bottom: 28px;
         }
 
         label {
             display: block;
-            color: #444;
+            color: var(--text);
             font-weight: 700;
             margin-bottom: 8px;
         }
@@ -105,7 +123,8 @@
         input {
             width: 100%;
             min-height: 48px;
-            border: 2px solid #ddd;
+            border: 2px solid rgba(148, 163, 184, 0.45);
+            background: rgba(255, 255, 255, 0.72);
             border-radius: 8px;
             padding: 12px 14px;
             font-size: 1rem;
@@ -113,8 +132,8 @@
 
         input:focus {
             outline: none;
-            border-color: #ff6b00;
-            box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.12);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.16);
         }
 
         .actions {
@@ -137,13 +156,13 @@
         }
 
         button {
-            background: #ff6b00;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             color: #fff;
         }
 
         .button {
-            background: #f2f2f2;
-            color: #333;
+            background: rgba(15, 23, 42, 0.08);
+            color: var(--text);
             display: block;
         }
 

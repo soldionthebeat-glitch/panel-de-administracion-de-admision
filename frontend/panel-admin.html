@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background: radial-gradient(circle at 12% 15%, rgba(34, 211, 238, 0.18), transparent 30%), radial-gradient(circle at 85% 20%, rgba(37, 99, 235, 0.22), transparent 32%), linear-gradient(135deg, #06111f 0%, #0f2747 54%, #081826 100%);
             color: #333;
             line-height: 1.6;
             min-height: 100vh;
@@ -23,14 +23,16 @@
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            background: white;
+            background: rgba(255, 255, 255, 0.86);
+            border: 1px solid rgba(148, 163, 184, 0.35);
             border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 24px 70px rgba(2, 8, 23, 0.42);
+            backdrop-filter: blur(18px);
             overflow: hidden;
         }
 
         .header {
-            background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+            background: linear-gradient(135deg, #2563eb 0%, #22d3ee 100%);
             color: white;
             padding: 30px;
             display: flex;
@@ -60,8 +62,8 @@
         }
 
         .btn-primary {
-            background: white;
-            color: #ff6b00;
+            background: rgba(255, 255, 255, 0.82);
+            color: #2563eb;
         }
 
         .btn-primary:hover {
@@ -90,10 +92,10 @@
         }
 
         .stat-card {
-            background: #f5f5f5;
+            background: rgba(248, 250, 252, 0.74);
             padding: 20px;
             border-radius: 8px;
-            border-left: 4px solid #ff6b00;
+            border-left: 4px solid #2563eb;
         }
 
         .stat-card h3 {
@@ -105,7 +107,7 @@
 
         .stat-card .number {
             font-size: 2em;
-            color: #ff6b00;
+            color: #2563eb;
             font-weight: bold;
         }
 
@@ -130,7 +132,7 @@
         .filter-group input,
         .filter-group select {
             padding: 10px;
-            border: 2px solid #ddd;
+            border: 1px solid rgba(148, 163, 184, 0.48);
             border-radius: 6px;
             font-size: 1em;
         }
@@ -138,26 +140,26 @@
         .filter-group input:focus,
         .filter-group select:focus {
             outline: none;
-            border-color: #ff6b00;
-            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.16);
         }
 
         .applications-table {
             width: 100%;
             border-collapse: collapse;
-            background: white;
+            background: rgba(255, 255, 255, 0.82);
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .applications-table th {
-            background: #f5f5f5;
+            background: rgba(248, 250, 252, 0.74);
             padding: 15px;
             text-align: left;
             font-weight: 600;
             color: #333;
-            border-bottom: 2px solid #ff6b00;
+            border-bottom: 2px solid #2563eb;
         }
 
         .applications-table td {
@@ -166,7 +168,7 @@
         }
 
         .applications-table tbody tr:hover {
-            background: #f9f9f9;
+            background: rgba(248, 250, 252, 0.68);
         }
 
         .status-badge {
@@ -208,7 +210,7 @@
             display: inline-block;
             padding: 5px 10px;
             border-radius: 4px;
-            background: #f5f5f5;
+            background: rgba(248, 250, 252, 0.74);
             color: #333;
             font-size: 0.9em;
         }
@@ -251,7 +253,7 @@
         }
 
         .modal-content {
-            background: white;
+            background: rgba(255, 255, 255, 0.82);
             margin: 5% auto;
             padding: 30px;
             border-radius: 12px;
@@ -267,24 +269,24 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
-            border-bottom: 2px solid #ff6b00;
+            border-bottom: 2px solid #2563eb;
             padding-bottom: 15px;
         }
 
         .modal-header h2 {
-            color: #ff6b00;
+            color: #2563eb;
         }
 
         .close-modal {
             font-size: 28px;
             font-weight: bold;
-            color: #ff6b00;
+            color: #2563eb;
             cursor: pointer;
             transition: all 0.3s;
         }
 
         .close-modal:hover {
-            color: #ff8c00;
+            color: #22d3ee;
         }
 
         .scores-grid {
@@ -295,11 +297,11 @@
         }
 
         .score-item {
-            background: #f5f5f5;
+            background: rgba(248, 250, 252, 0.74);
             padding: 15px;
             border-radius: 8px;
             text-align: center;
-            border-left: 4px solid #ff6b00;
+            border-left: 4px solid #2563eb;
         }
 
         .score-item label {
@@ -313,19 +315,19 @@
 
         .score-item .score-number {
             font-size: 2em;
-            color: #ff6b00;
+            color: #2563eb;
             font-weight: bold;
         }
 
         .detail-section {
             margin: 20px 0;
             padding: 15px;
-            background: #f9f9f9;
+            background: rgba(248, 250, 252, 0.68);
             border-radius: 8px;
         }
 
         .detail-section h3 {
-            color: #ff6b00;
+            color: #2563eb;
             margin-bottom: 10px;
             font-size: 1.1em;
         }
@@ -395,7 +397,7 @@
         }
 
         .no-data {
-            background: #f9f9f9;
+            background: rgba(248, 250, 252, 0.68);
             padding: 20px;
             border-radius: 8px;
             text-align: center;
@@ -403,12 +405,12 @@
         }
 
         .export-btn {
-            background: #ff6b00;
+            background: #2563eb;
             color: white;
         }
 
         .export-btn:hover {
-            background: #ff8c00;
+            background: #22d3ee;
         }
 
         @media (max-width: 768px) {
@@ -443,14 +445,14 @@
         }
 
         .chart {
-            background: #f5f5f5;
+            background: rgba(248, 250, 252, 0.74);
             padding: 20px;
             border-radius: 8px;
-            border: 2px solid #ff6b00;
+            border: 2px solid #2563eb;
         }
 
         .chart h3 {
-            color: #ff6b00;
+            color: #2563eb;
             margin-bottom: 15px;
             font-size: 1em;
         }
@@ -479,7 +481,7 @@
 
         .chart-fill {
             height: 100%;
-            background: linear-gradient(90deg, #ff6b00, #ff8c00);
+            background: linear-gradient(90deg, #2563eb, #22d3ee);
             display: flex;
             align-items: center;
             justify-content: flex-end;
@@ -494,18 +496,18 @@
     <div class="container">
         <div class="header">
             <div>
-                <h1>🎵 PRODUCERS GO - Panel Administrativo</h1>
-                <p>Sistema de Evaluación Automática con IA</p>
+                <h1>ðŸŽµ PRODUCERS GO - Panel Administrativo</h1>
+                <p>Sistema de EvaluaciÃ³n AutomÃ¡tica con IA</p>
             </div>
             <div class="header-actions">
-                <button class="btn btn-secondary" onclick="exportData()">📥 Exportar</button>
-                <a href="formulario-admision-productores.html" class="btn btn-primary">Link de Admisión</a>
-                <button class="btn btn-secondary" onclick="logoutFounder()">Cerrar Sesión</button>
+                <button class="btn btn-secondary" onclick="exportData()">ðŸ“¥ Exportar</button>
+                <a href="formulario-admision-productores.html" class="btn btn-primary">Link de AdmisiÃ³n</a>
+                <button class="btn btn-secondary" onclick="logoutFounder()">Cerrar SesiÃ³n</button>
             </div>
         </div>
 
         <div class="content">
-            <!-- Estadísticas -->
+            <!-- EstadÃ­sticas -->
             <div class="stats">
                 <div class="stat-card">
                     <h3>Total de Solicitudes</h3>
@@ -516,7 +518,7 @@
                     <div class="number" id="pendingApps">0</div>
                 </div>
                 <div class="stat-card">
-                    <h3>En Revisión Legal</h3>
+                    <h3>En RevisiÃ³n Legal</h3>
                     <div class="number" id="reviewApps">0</div>
                 </div>
                 <div class="stat-card">
@@ -525,10 +527,10 @@
                 </div>
             </div>
 
-            <!-- Gráficos -->
+            <!-- GrÃ¡ficos -->
             <div class="chart-container">
                 <div class="chart">
-                    <h3>Clasificación por Modelo</h3>
+                    <h3>ClasificaciÃ³n por Modelo</h3>
                     <div id="classificationChart"></div>
                 </div>
                 <div class="chart">
@@ -544,7 +546,7 @@
             <!-- Filtros -->
             <div class="filters">
                 <div class="filter-group">
-                    <label>🔍 Buscar:</label>
+                    <label>ðŸ” Buscar:</label>
                     <input type="text" id="searchInput" placeholder="Nombre, email...">
                 </div>
                 <div class="filter-group">
@@ -552,7 +554,7 @@
                     <select id="statusFilter">
                         <option value="">Todos</option>
                         <option value="pending">Pendiente</option>
-                        <option value="review">En Revisión</option>
+                        <option value="review">En RevisiÃ³n</option>
                         <option value="approved">Aprobado</option>
                         <option value="rejected">Rechazado</option>
                     </select>
@@ -573,7 +575,7 @@
 
             <!-- Tabla de Aplicaciones -->
             <div id="applicationsContainer">
-                <div class="no-data">📭 No hay solicitudes. Las solicitudes aparecerán aquí cuando se envíen a través del formulario.</div>
+                <div class="no-data">ðŸ“­ No hay solicitudes. Las solicitudes aparecerÃ¡n aquÃ­ cuando se envÃ­en a travÃ©s del formulario.</div>
             </div>
         </div>
     </div>
@@ -622,7 +624,7 @@
             if (response.status === 401) {
                 localStorage.removeItem(FOUNDER_SESSION_KEY);
                 window.location.href = '../index.html';
-                throw new Error('Sesión de fundador requerida');
+                throw new Error('SesiÃ³n de fundador requerida');
             }
             if (!response.ok || result.success === false) {
                 throw new Error(result.message || result.error || `HTTP ${response.status}`);
@@ -667,7 +669,7 @@
                 classification: completos.classification || {
                     model: row.modelo_clasificacion,
                     label: row.modelo_clasificacion,
-                    color: '#ff6b00'
+                    color: '#2563eb'
                 },
                 status: row.estado || 'pending'
             };
@@ -690,9 +692,9 @@
         function displayApplications(applications) {
             const container = document.getElementById('applicationsContainer');
             visibleApplications = applications;
-            
+
             if (applications.length === 0) {
-                container.innerHTML = '<div class="no-data">📭 No hay solicitudes. Las solicitudes aparecerán aquí cuando se envíen a través del formulario.</div>';
+                container.innerHTML = '<div class="no-data">ðŸ“­ No hay solicitudes. Las solicitudes aparecerÃ¡n aquÃ­ cuando se envÃ­en a travÃ©s del formulario.</div>';
                 return;
             }
 
@@ -701,7 +703,7 @@
                 '<th>Productor</th>' +
                 '<th>Email</th>' +
                 '<th>Puntaje Final</th>' +
-                '<th>Clasificación</th>' +
+                '<th>ClasificaciÃ³n</th>' +
                 '<th>Estado</th>' +
                 '<th>Fecha</th>' +
                 '<th>Acciones</th>' +
@@ -711,7 +713,7 @@
                 const score = app.finalScore || 0;
                 const classification = app.classification || {};
                 let scoreBadge = 'low';
-                
+
                 if (score >= 4.6) scoreBadge = 'excellent';
                 else if (score >= 4.0) scoreBadge = 'good';
                 else if (score >= 3.0) scoreBadge = 'average';
@@ -738,10 +740,10 @@
             const modelFilter = document.getElementById('modelFilter').value;
 
             const filtered = currentApplications.filter(app => {
-                const matchesSearch = !searchTerm || 
+                const matchesSearch = !searchTerm ||
                     app.personalData?.nombreArtistico?.toLowerCase().includes(searchTerm) ||
                     app.personalData?.email?.toLowerCase().includes(searchTerm);
-                
+
                 const matchesStatus = !statusFilter || app.status === statusFilter;
                 const matchesModel = !modelFilter || app.classification?.model === modelFilter;
 
@@ -753,21 +755,21 @@
 
         function updateStats(applications) {
             document.getElementById('totalApps').textContent = applications.length;
-            
+
             const pending = applications.filter(a => a.status === 'pending').length;
             document.getElementById('pendingApps').textContent = pending;
-            
+
             const review = applications.filter(a => a.status === 'review').length;
             document.getElementById('reviewApps').textContent = review;
-            
-            const avgScore = applications.length > 0 
+
+            const avgScore = applications.length > 0
                 ? (applications.reduce((sum, a) => sum + (a.finalScore || 0), 0) / applications.length).toFixed(2)
                 : 0;
             document.getElementById('avgScore').textContent = avgScore;
         }
 
         function updateCharts(applications) {
-            // Gráfico de clasificación
+            // GrÃ¡fico de clasificaciÃ³n
             const classifications = {};
             applications.forEach(app => {
                 const model = app.classification?.model || 'N/A';
@@ -788,8 +790,8 @@
             });
             document.getElementById('classificationChart').innerHTML = classChart || '<p>Sin datos</p>';
 
-            // Gráfico de puntajes promedio
-            const categories = ['Artístico', 'Técnico', 'Humano', 'Organizativo', 'Comercial'];
+            // GrÃ¡fico de puntajes promedio
+            const categories = ['ArtÃ­stico', 'TÃ©cnico', 'Humano', 'Organizativo', 'Comercial'];
             const keys = ['artistico', 'tecnico', 'humano', 'organizativo', 'comercial'];
             let scoresChart = '';
 
@@ -809,7 +811,7 @@
             });
             document.getElementById('scoresChart').innerHTML = scoresChart;
 
-            // Gráfico de estado
+            // GrÃ¡fico de estado
             const statuses = {};
             applications.forEach(app => {
                 const status = app.status || 'pending';
@@ -842,45 +844,45 @@
 
             let detailsHtml = `
                 <div class="detail-section">
-                    <h3>📋 Información Personal</h3>
+                    <h3>ðŸ“‹ InformaciÃ³n Personal</h3>
                     <p><span class="detail-label">Nombre:</span> ${app.personalData?.nombre || 'N/A'}</p>
-                    <p><span class="detail-label">Nombre Artístico:</span> ${app.personalData?.nombreArtistico || 'N/A'}</p>
+                    <p><span class="detail-label">Nombre ArtÃ­stico:</span> ${app.personalData?.nombreArtistico || 'N/A'}</p>
                     <p><span class="detail-label">Email:</span> ${app.personalData?.email || 'N/A'}</p>
                     <p><span class="detail-label">WhatsApp:</span> ${app.personalData?.whatsapp || 'N/A'}</p>
                     <p><span class="detail-label">Edad:</span> ${app.personalData?.edad || 'N/A'}</p>
-                    <p><span class="detail-label">País:</span> ${app.personalData?.pais || 'N/A'}</p>
+                    <p><span class="detail-label">PaÃ­s:</span> ${app.personalData?.pais || 'N/A'}</p>
                 </div>
 
                 <div class="detail-section">
-                    <h3>🤖 Evaluación Automática de IA</h3>
+                    <h3>ðŸ¤– EvaluaciÃ³n AutomÃ¡tica de IA</h3>
                     <div class="scores-grid">
                         <div class="score-item">
-                            <label>🎨 Artística</label>
+                            <label>ðŸŽ¨ ArtÃ­stica</label>
                             <div class="score-number">${(scores.artistico || 0).toFixed(1)}</div>
                         </div>
                         <div class="score-item">
-                            <label>⚙️ Técnica</label>
+                            <label>âš™ï¸ TÃ©cnica</label>
                             <div class="score-number">${(scores.tecnico || 0).toFixed(1)}</div>
                         </div>
                         <div class="score-item">
-                            <label>👥 Humana</label>
+                            <label>ðŸ‘¥ Humana</label>
                             <div class="score-number">${(scores.humano || 0).toFixed(1)}</div>
                         </div>
                         <div class="score-item">
-                            <label>📁 Organizativa</label>
+                            <label>ðŸ“ Organizativa</label>
                             <div class="score-number">${(scores.organizativo || 0).toFixed(1)}</div>
                         </div>
                         <div class="score-item">
-                            <label>💰 Comercial</label>
+                            <label>ðŸ’° Comercial</label>
                             <div class="score-number">${(scores.comercial || 0).toFixed(1)}</div>
                         </div>
                     </div>
-                    <hr style="margin: 15px 0; border: none; border-top: 2px solid #ff6b00;">
+                    <hr style="margin: 15px 0; border: none; border-top: 2px solid #2563eb;">
                     <p style="text-align: center; font-size: 1.2em; margin-top: 15px;">
                         <strong>Puntaje Final:</strong> <span style="color: ${classification.color || '#999'}; font-size: 1.4em;">${(app.finalScore || 0).toFixed(2)}/5.0</span>
                     </p>
                     <p style="text-align: center; margin-top: 10px;">
-                        <strong>Clasificación:</strong> <span style="color: ${classification.color || '#999'};"><strong>${classification.label || 'N/A'}</strong></span>
+                        <strong>ClasificaciÃ³n:</strong> <span style="color: ${classification.color || '#999'};"><strong>${classification.label || 'N/A'}</strong></span>
                     </p>
                     <p style="text-align: center;">
                         <strong>Modelo:</strong> <span style="color: ${classification.color || '#999'};"><strong>${classification.model || 'N/A'}</strong></span>
@@ -888,13 +890,13 @@
                 </div>
 
                 <div class="action-buttons">
-                    <button class="btn-small btn-approve" onclick="updateStatus(${index}, 'approved')">✅ Aprobar</button>
-                    <button class="btn-small btn-review" onclick="updateStatus(${index}, 'review')">⏳ En Revisión</button>
-                    <button class="btn-small btn-reject" onclick="updateStatus(${index}, 'rejected')">❌ Rechazar</button>
+                    <button class="btn-small btn-approve" onclick="updateStatus(${index}, 'approved')">âœ… Aprobar</button>
+                    <button class="btn-small btn-review" onclick="updateStatus(${index}, 'review')">â³ En RevisiÃ³n</button>
+                    <button class="btn-small btn-reject" onclick="updateStatus(${index}, 'rejected')">âŒ Rechazar</button>
                 </div>
 
                 <div class="detail-section" style="margin-top: 20px;">
-                    <h3>📝 Fecha de Solicitud</h3>
+                    <h3>ðŸ“ Fecha de Solicitud</h3>
                     <p>${app.timestamp || 'N/A'}</p>
                     <p><span class="detail-label">ID Solicitud:</span> #${app.id}</p>
                     <p><span class="detail-label">Estado Actual:</span> <span class="status-badge status-${app.status || 'pending'}">${getStatusLabel(app.status)}</span></p>
@@ -931,10 +933,10 @@
 
         function getStatusLabel(status) {
             const labels = {
-                'pending': '⏳ Pendiente',
-                'review': '🔍 En Revisión',
-                'approved': '✅ Aprobado',
-                'rejected': '❌ Rechazado'
+                'pending': 'â³ Pendiente',
+                'review': 'ðŸ” En RevisiÃ³n',
+                'approved': 'âœ… Aprobado',
+                'rejected': 'âŒ Rechazado'
             };
             return labels[status] || 'Desconocido';
         }
@@ -948,15 +950,15 @@
 
         function exportData() {
             const applications = currentApplications;
-            
+
             if (applications.length === 0) {
                 alert('No hay datos para exportar');
                 return;
             }
 
             // Crear CSV
-            let csv = 'ID,Nombre,Email,Puntaje,Clasificación,Artística,Técnica,Humana,Organizativa,Comercial,Estado,Fecha\n';
-            
+            let csv = 'ID,Nombre,Email,Puntaje,ClasificaciÃ³n,ArtÃ­stica,TÃ©cnica,Humana,Organizativa,Comercial,Estado,Fecha\n';
+
             applications.forEach(app => {
                 const scores = app.scores || {};
                 csv += `${app.id},"${app.personalData?.nombreArtistico}","${app.personalData?.email}",${app.finalScore},"${app.classification?.label}",${scores.artistico},${scores.tecnico},${scores.humano},${scores.organizativo},${scores.comercial},"${app.status}","${app.timestamp}"\n`;

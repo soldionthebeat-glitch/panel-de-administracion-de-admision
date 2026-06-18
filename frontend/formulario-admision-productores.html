@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Admisión - PRODUCERS GO</title>
+    <title>Formulario de AdmisiÃ³n - PRODUCERS GO</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background: radial-gradient(circle at 12% 15%, rgba(34, 211, 238, 0.18), transparent 30%), radial-gradient(circle at 85% 20%, rgba(37, 99, 235, 0.22), transparent 32%), linear-gradient(135deg, #06111f 0%, #0f2747 54%, #081826 100%);
             color: #333;
             line-height: 1.6;
             min-height: 100vh;
@@ -23,14 +23,16 @@
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            background: white;
+            background: rgba(255, 255, 255, 0.86);
+            border: 1px solid rgba(148, 163, 184, 0.35);
             border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 24px 70px rgba(2, 8, 23, 0.42);
+            backdrop-filter: blur(18px);
             overflow: hidden;
         }
 
         .header {
-            background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+            background: linear-gradient(135deg, #2563eb 0%, #22d3ee 100%);
             color: white;
             padding: 40px;
             text-align: center;
@@ -52,17 +54,17 @@
 
         .module {
             margin-bottom: 40px;
-            border: 2px solid #eee;
+            border: 1px solid rgba(148, 163, 184, 0.34);
             border-radius: 8px;
             padding: 25px;
-            background: #fafafa;
+            background: rgba(248, 250, 252, 0.72);
         }
 
         .module h2 {
-            color: #ff6b00;
+            color: #2563eb;
             font-size: 1.8em;
             margin-bottom: 10px;
-            border-bottom: 3px solid #ff6b00;
+            border-bottom: 3px solid #2563eb;
             padding-bottom: 10px;
         }
 
@@ -103,7 +105,7 @@
         .form-group select {
             width: 100%;
             padding: 12px;
-            border: 2px solid #ddd;
+            border: 1px solid rgba(148, 163, 184, 0.48);
             border-radius: 6px;
             font-size: 1em;
             font-family: inherit;
@@ -114,8 +116,8 @@
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: #ff6b00;
-            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.16);
         }
 
         .form-group textarea {
@@ -143,7 +145,7 @@
             width: 18px;
             height: 18px;
             cursor: pointer;
-            accent-color: #ff6b00;
+            accent-color: #2563eb;
         }
 
         .two-column {
@@ -159,18 +161,18 @@
         }
 
         .file-upload-area {
-            border: 2px dashed #ff6b00;
+            border: 2px dashed #2563eb;
             border-radius: 8px;
             padding: 20px;
             text-align: center;
-            background: #fff9f5;
+            background: rgba(239, 246, 255, 0.78);
             cursor: pointer;
             transition: all 0.3s;
         }
 
         .file-upload-area:hover {
-            background: #ffe8d6;
-            border-color: #ff8c00;
+            background: rgba(207, 250, 254, 0.82);
+            border-color: #22d3ee;
         }
 
         .file-upload-area input[type="file"] {
@@ -179,7 +181,7 @@
 
         .reCAPTCHA-notice {
             background: #f0f0f0;
-            border-left: 4px solid #ff6b00;
+            border-left: 4px solid #2563eb;
             padding: 15px;
             margin: 20px 0;
             border-radius: 4px;
@@ -187,7 +189,7 @@
         }
 
         .required-asterisk {
-            color: #ff6b00;
+            color: #2563eb;
             font-weight: bold;
         }
 
@@ -209,14 +211,14 @@
         }
 
         .btn-submit {
-            background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+            background: linear-gradient(135deg, #2563eb 0%, #22d3ee 100%);
             color: white;
             flex: 1;
         }
 
         .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(255, 107, 0, 0.4);
+            box-shadow: 0 5px 20px rgba(37, 99, 235, 0.28);
         }
 
         .btn-reset {
@@ -260,22 +262,22 @@
         }
 
         .scoring-section {
-            background: #f9f9f9;
-            border: 2px solid #ff6b00;
+            background: rgba(248, 250, 252, 0.68);
+            border: 2px solid #2563eb;
             border-radius: 8px;
             padding: 20px;
             margin: 20px 0;
         }
 
         .scoring-section h3 {
-            color: #ff6b00;
+            color: #2563eb;
             margin-bottom: 15px;
         }
 
         .scoring-table {
             width: 100%;
             border-collapse: collapse;
-            background: white;
+            background: rgba(255, 255, 255, 0.82);
         }
 
         .scoring-table th,
@@ -286,13 +288,13 @@
         }
 
         .scoring-table th {
-            background: #ff6b00;
+            background: #2563eb;
             color: white;
             font-weight: 600;
         }
 
         .scoring-table tr:nth-child(even) {
-            background: #f9f9f9;
+            background: rgba(248, 250, 252, 0.68);
         }
 
         .tabs {
@@ -315,12 +317,12 @@
         }
 
         .tab-button:hover {
-            color: #ff6b00;
+            color: #2563eb;
         }
 
         .tab-button.active {
-            color: #ff6b00;
-            border-bottom-color: #ff6b00;
+            color: #2563eb;
+            border-bottom-color: #2563eb;
         }
 
         .tab-content {
@@ -340,7 +342,7 @@
         }
 
         .progress-bar {
-            background: linear-gradient(90deg, #ff6b00 0%, #ff8c00 100%);
+            background: linear-gradient(90deg, #2563eb 0%, #22d3ee 100%);
             height: 100%;
             width: 0%;
             transition: width 0.3s;
@@ -348,14 +350,14 @@
 
         .declaration-box {
             background: #f0f0f0;
-            border-left: 4px solid #ff6b00;
+            border-left: 4px solid #2563eb;
             padding: 20px;
             margin: 20px 0;
             border-radius: 4px;
         }
 
         .declaration-box h4 {
-            color: #ff6b00;
+            color: #2563eb;
             margin-bottom: 10px;
         }
 
@@ -373,7 +375,7 @@
 
         .filter-critical {
             background: #fff3cd;
-            border-left: 4px solid #ff6b00;
+            border-left: 4px solid #2563eb;
             padding: 15px;
             margin: 10px 0;
             border-radius: 4px;
@@ -391,7 +393,7 @@
         }
 
         .footer {
-            background: #f5f5f5;
+            background: rgba(248, 250, 252, 0.74);
             padding: 20px;
             text-align: center;
             color: #666;
@@ -401,7 +403,7 @@
 
         .section-counter {
             display: inline-block;
-            background: #ff6b00;
+            background: #2563eb;
             color: white;
             padding: 2px 8px;
             border-radius: 12px;
@@ -413,8 +415,8 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎵 PRODUCERS GO</h1>
-            <p>Formulario de Admisión de Productores Musicales</p>
+            <h1>ðŸŽµ PRODUCERS GO</h1>
+            <p>Formulario de AdmisiÃ³n de Productores Musicales</p>
         </div>
 
         <div class="content">
@@ -428,11 +430,11 @@
 
             <form id="admissionForm" method="POST" enctype="multipart/form-data">
 
-                <!-- MÓDULO 1: DATOS GENERALES -->
+                <!-- MÃ“DULO 1: DATOS GENERALES -->
                 <div class="module">
-                    <span class="section-counter">MÓDULO 1</span>
-                    <h2>📋 Datos Generales</h2>
-                    <p class="module-description">Información personal y de contacto del productor.</p>
+                    <span class="section-counter">MÃ“DULO 1</span>
+                    <h2>ðŸ“‹ Datos Generales</h2>
+                    <p class="module-description">InformaciÃ³n personal y de contacto del productor.</p>
 
                     <div class="two-column">
                         <div class="form-group">
@@ -440,8 +442,8 @@
                             <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
                         </div>
                         <div class="form-group">
-                            <label for="nombreArtistico">Nombre Artístico <span class="required-asterisk">*</span></label>
-                            <input type="text" id="nombreArtistico" name="nombreArtistico" placeholder="Tu nombre artístico" required>
+                            <label for="nombreArtistico">Nombre ArtÃ­stico <span class="required-asterisk">*</span></label>
+                            <input type="text" id="nombreArtistico" name="nombreArtistico" placeholder="Tu nombre artÃ­stico" required>
                         </div>
                     </div>
 
@@ -451,8 +453,8 @@
                             <input type="number" id="edad" name="edad" placeholder="Tu edad" min="18" required>
                         </div>
                         <div class="form-group">
-                            <label for="pais">País / Ciudad <span class="required-asterisk">*</span></label>
-                            <input type="text" id="pais" name="pais" placeholder="Tu país y ciudad" required>
+                            <label for="pais">PaÃ­s / Ciudad <span class="required-asterisk">*</span></label>
+                            <input type="text" id="pais" name="pais" placeholder="Tu paÃ­s y ciudad" required>
                         </div>
                     </div>
 
@@ -474,7 +476,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="linksMusica">Links a tu Música <span class="required-asterisk">*</span></label>
+                        <label for="linksMusica">Links a tu MÃºsica <span class="required-asterisk">*</span></label>
                         <span class="label-info">BeatStars, YouTube, Spotify, SoundCloud, Drive, Portafolio, etc.</span>
                         <textarea id="linksMusica" name="linksMusica" placeholder="https://beatstars.com/...&#10;https://soundcloud.com/...&#10;https://..." required></textarea>
                     </div>
@@ -494,13 +496,13 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="experiencia">Años de Experiencia <span class="required-asterisk">*</span></label>
+                            <label for="experiencia">AÃ±os de Experiencia <span class="required-asterisk">*</span></label>
                             <select id="experiencia" name="experiencia" required>
                                 <option value="">-- Selecciona tu experiencia --</option>
-                                <option value="menos_1">Menos de 1 año</option>
-                                <option value="1_2">1 a 2 años</option>
-                                <option value="3_5">3 a 5 años</option>
-                                <option value="mas_5">Más de 5 años</option>
+                                <option value="menos_1">Menos de 1 aÃ±o</option>
+                                <option value="1_2">1 a 2 aÃ±os</option>
+                                <option value="3_5">3 a 5 aÃ±os</option>
+                                <option value="mas_5">MÃ¡s de 5 aÃ±os</option>
                             </select>
                         </div>
                     </div>
@@ -512,15 +514,15 @@
                             <option value="1_3">1 a 3 horas</option>
                             <option value="4_6">4 a 6 horas</option>
                             <option value="7_10">7 a 10 horas</option>
-                            <option value="mas_10">Más de 10 horas</option>
+                            <option value="mas_10">MÃ¡s de 10 horas</option>
                             <option value="por_proyecto">Solo por proyecto</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="situacionActual">Situación Actual <span class="required-asterisk">*</span></label>
+                        <label for="situacionActual">SituaciÃ³n Actual <span class="required-asterisk">*</span></label>
                         <select id="situacionActual" name="situacionActual" required>
-                            <option value="">-- Selecciona tu situación --</option>
+                            <option value="">-- Selecciona tu situaciÃ³n --</option>
                             <option value="independiente">Independiente</option>
                             <option value="firmado">Firmado con sello</option>
                             <option value="trabaja_artistas">Trabaja con artistas</option>
@@ -530,59 +532,59 @@
                     </div>
                 </div>
 
-                <!-- MÓDULO 2: EVALUACIÓN ARTÍSTICA -->
+                <!-- MÃ“DULO 2: EVALUACIÃ“N ARTÃSTICA -->
                 <div class="module">
-                    <span class="section-counter">MÓDULO 2</span>
-                    <h2>🎨 Evaluación Artística</h2>
+                    <span class="section-counter">MÃ“DULO 2</span>
+                    <h2>ðŸŽ¨ EvaluaciÃ³n ArtÃ­stica</h2>
                     <p class="module-description">Evaluamos tu identidad sonora, criterio musical y potencial creativo.</p>
 
                     <div class="form-group">
-                        <label for="generos">¿Qué géneros musicales producís principalmente? <span class="required-asterisk">*</span></label>
-                        <span class="label-info">Especialización, versatilidad y compatibilidad con el ecosistema</span>
-                        <textarea id="generos" name="generos" placeholder="Trap, reggaetón, afrobeat, R&B, drill, electrónica..." required></textarea>
+                        <label for="generos">Â¿QuÃ© gÃ©neros musicales producÃ­s principalmente? <span class="required-asterisk">*</span></label>
+                        <span class="label-info">EspecializaciÃ³n, versatilidad y compatibilidad con el ecosistema</span>
+                        <textarea id="generos" name="generos" placeholder="Trap, reggaetÃ³n, afrobeat, R&B, drill, electrÃ³nica..." required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="referencias">¿Cuáles son tus principales referencias musicales? <span class="required-asterisk">*</span></label>
-                        <span class="label-info">Criterio artístico, aspiración sonora y cultura musical</span>
+                        <label for="referencias">Â¿CuÃ¡les son tus principales referencias musicales? <span class="required-asterisk">*</span></label>
+                        <span class="label-info">Criterio artÃ­stico, aspiraciÃ³n sonora y cultura musical</span>
                         <textarea id="referencias" name="referencias" placeholder="Tainy, Sky Rompiendo, Bizarrap, Metro Boomin, Ovy On The Drums..." required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="sonido">¿Cómo describirías tu sonido como productor? <span class="required-asterisk">*</span></label>
-                        <span class="label-info">Identidad sonora: oscuro, melódico, minimalista, experimental, comercial, etc.</span>
+                        <label for="sonido">Â¿CÃ³mo describirÃ­as tu sonido como productor? <span class="required-asterisk">*</span></label>
+                        <span class="label-info">Identidad sonora: oscuro, melÃ³dico, minimalista, experimental, comercial, etc.</span>
                         <textarea id="sonido" name="sonido" placeholder="Describe tu identidad sonora..." required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="diferenciacion">¿Qué creés que te diferencia de otros productores? <span class="required-asterisk">*</span></label>
-                        <span class="label-info">Muy importante: autoconocimiento, propuesta de valor y personalidad artística</span>
-                        <textarea id="diferenciacion" name="diferenciacion" placeholder="Tu propuesta única..." required></textarea>
+                        <label for="diferenciacion">Â¿QuÃ© creÃ©s que te diferencia de otros productores? <span class="required-asterisk">*</span></label>
+                        <span class="label-info">Muy importante: autoconocimiento, propuesta de valor y personalidad artÃ­stica</span>
+                        <textarea id="diferenciacion" name="diferenciacion" placeholder="Tu propuesta Ãºnica..." required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="producciones">Enviá links de 3 a 5 producciones que representen tu mejor nivel <span class="required-asterisk">*</span></label>
+                        <label for="producciones">EnviÃ¡ links de 3 a 5 producciones que representen tu mejor nivel <span class="required-asterisk">*</span></label>
                         <span class="label-info">Calidad real: YouTube, SoundCloud, Google Drive, BeatStars, etc.</span>
                         <textarea id="producciones" name="producciones" placeholder="https://soundcloud.com/...&#10;https://youtube.com/...&#10;https://drive.google.com/..." required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="enfoque">¿Tus producciones están pensadas para? <span class="required-asterisk">*</span></label>
+                        <label for="enfoque">Â¿Tus producciones estÃ¡n pensadas para? <span class="required-asterisk">*</span></label>
                         <select id="enfoque" name="enfoque" required>
                             <option value="">-- Selecciona tu enfoque --</option>
                             <option value="venta_beats">Venta de beats</option>
-                            <option value="produccion_artistas">Producción para artistas</option>
+                            <option value="produccion_artistas">ProducciÃ³n para artistas</option>
                             <option value="desarrollo_completo">Desarrollo integral de canciones</option>
-                            <option value="catalogo_instrumental">Catálogo instrumental</option>
-                            <option value="sincronizacion">Música para sincronización</option>
+                            <option value="catalogo_instrumental">CatÃ¡logo instrumental</option>
+                            <option value="sincronizacion">MÃºsica para sincronizaciÃ³n</option>
                             <option value="otro">Otro</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="parteCreativa">¿Qué parte del proceso creativo disfrutás más? <span class="required-asterisk">*</span></label>
+                        <label for="parteCreativa">Â¿QuÃ© parte del proceso creativo disfrutÃ¡s mÃ¡s? <span class="required-asterisk">*</span></label>
                         <div class="checkbox-group">
-                            <label><input type="checkbox" name="parteCreativa" value="melodias"> Crear melodías</label>
+                            <label><input type="checkbox" name="parteCreativa" value="melodias"> Crear melodÃ­as</label>
                             <label><input type="checkbox" name="parteCreativa" value="drums"> Programar drums</label>
                             <label><input type="checkbox" name="parteCreativa" value="arreglos"> Hacer arreglos</label>
                             <label><input type="checkbox" name="parteCreativa" value="voces"> Grabar voces</label>
@@ -593,8 +595,8 @@
                     </div>
 
                     <div class="scoring-section">
-                        <h3>📊 Puntaje de Evaluación Artística</h3>
-                        <p class="small-text">Será evaluado internamente por el equipo de PRODUCERS GO</p>
+                        <h3>ðŸ“Š Puntaje de EvaluaciÃ³n ArtÃ­stica</h3>
+                        <p class="small-text">SerÃ¡ evaluado internamente por el equipo de PRODUCERS GO</p>
                         <table class="scoring-table">
                             <tr>
                                 <th>Criterio</th>
@@ -624,28 +626,28 @@
                     </div>
                 </div>
 
-                <!-- MÓDULO 3: EVALUACIÓN TÉCNICA -->
+                <!-- MÃ“DULO 3: EVALUACIÃ“N TÃ‰CNICA -->
                 <div class="module">
-                    <span class="section-counter">MÓDULO 3</span>
-                    <h2>⚙️ Evaluación Técnica</h2>
-                    <p class="module-description">Evaluamos capacidad profesional, entrega de archivos y colaboración ordenada.</p>
+                    <span class="section-counter">MÃ“DULO 3</span>
+                    <h2>âš™ï¸ EvaluaciÃ³n TÃ©cnica</h2>
+                    <p class="module-description">Evaluamos capacidad profesional, entrega de archivos y colaboraciÃ³n ordenada.</p>
 
                     <div class="form-group">
-                        <label for="stems">¿Sabés entregar stems correctamente? <span class="required-asterisk">*</span></label>
+                        <label for="stems">Â¿SabÃ©s entregar stems correctamente? <span class="required-asterisk">*</span></label>
                         <select id="stems" name="stems" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="siempre">Sí, siempre</option>
-                            <option value="con_guia">Sí, pero necesito guía</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="siempre">SÃ­, siempre</option>
+                            <option value="con_guia">SÃ­, pero necesito guÃ­a</option>
                             <option value="no_seguro">No estoy seguro</option>
                             <option value="no">No</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="bpmTonalidad">¿Sabés identificar BPM y tonalidad de tus producciones? <span class="required-asterisk">*</span></label>
+                        <label for="bpmTonalidad">Â¿SabÃ©s identificar BPM y tonalidad de tus producciones? <span class="required-asterisk">*</span></label>
                         <select id="bpmTonalidad" name="bpmTonalidad" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="si">Sí</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="si">SÃ­</option>
                             <option value="aveces">A veces</option>
                             <option value="ayuda">Necesito ayuda</option>
                             <option value="no">No</option>
@@ -653,16 +655,16 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="organizacion">¿Cómo organizás tus proyectos y sesiones? <span class="required-asterisk">*</span></label>
+                        <label for="organizacion">Â¿CÃ³mo organizÃ¡s tus proyectos y sesiones? <span class="required-asterisk">*</span></label>
                         <span class="label-info">Ejemplo: guardo carpeta con proyecto, stems, master, BPM, tonalidad, referencias, versiones</span>
-                        <textarea id="organizacion" name="organizacion" placeholder="Describe tu sistema de organización..." required></textarea>
+                        <textarea id="organizacion" name="organizacion" placeholder="Describe tu sistema de organizaciÃ³n..." required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="mezcla">¿Tenés conocimientos de mezcla? <span class="required-asterisk">*</span></label>
+                        <label for="mezcla">Â¿TenÃ©s conocimientos de mezcla? <span class="required-asterisk">*</span></label>
                         <select id="mezcla" name="mezcla" required>
                             <option value="">-- Selecciona tu nivel --</option>
-                            <option value="basico">Básico</option>
+                            <option value="basico">BÃ¡sico</option>
                             <option value="intermedio">Intermedio</option>
                             <option value="avanzado">Avanzado</option>
                             <option value="profesional">Profesional</option>
@@ -671,10 +673,10 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="mastering">¿Tenés conocimientos de mastering? <span class="required-asterisk">*</span></label>
+                        <label for="mastering">Â¿TenÃ©s conocimientos de mastering? <span class="required-asterisk">*</span></label>
                         <select id="mastering" name="mastering" required>
                             <option value="">-- Selecciona tu nivel --</option>
-                            <option value="basico">Básico</option>
+                            <option value="basico">BÃ¡sico</option>
                             <option value="intermedio">Intermedio</option>
                             <option value="avanzado">Avanzado</option>
                             <option value="profesional">Profesional</option>
@@ -683,13 +685,13 @@
                     </div>
 
                     <div class="filter-critical">
-                        <strong>⚠️ PREGUNTA CRÍTICA:</strong> ¿Usás samples, loops, melodías de terceros o inteligencia artificial?
+                        <strong>âš ï¸ PREGUNTA CRÃTICA:</strong> Â¿UsÃ¡s samples, loops, melodÃ­as de terceros o inteligencia artificial?
                     </div>
 
                     <div class="form-group">
-                        <label for="usaSamples">¿Usás samples, loops, melodías de terceros o inteligencia artificial? <span class="required-asterisk">*</span></label>
+                        <label for="usaSamples">Â¿UsÃ¡s samples, loops, melodÃ­as de terceros o inteligencia artificial? <span class="required-asterisk">*</span></label>
                         <select id="usaSamples" name="usaSamples" required>
-                            <option value="">-- Selecciona una opción --</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
                             <option value="no_uso">No uso</option>
                             <option value="licencias">Uso, pero tengo licencias</option>
                             <option value="sin_licencia">Uso samples sin liberar</option>
@@ -699,30 +701,30 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="demostracionLicencias">Cuando usás samples o loops, ¿podés demostrar la licencia o procedencia? <span class="required-asterisk">*</span></label>
+                        <label for="demostracionLicencias">Cuando usÃ¡s samples o loops, Â¿podÃ©s demostrar la licencia o procedencia? <span class="required-asterisk">*</span></label>
                         <select id="demostracionLicencias" name="demostracionLicencias" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="si">Sí</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="si">SÃ­</option>
                             <option value="aveces">Algunas veces</option>
                             <option value="no">No</option>
-                            <option value="no_sé">No sé cómo funciona</option>
+                            <option value="no_sÃ©">No sÃ© cÃ³mo funciona</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="entregaRapida">¿Podrías entregar un beat con stems, BPM, tonalidad y metadata en menos de 48 horas? <span class="required-asterisk">*</span></label>
+                        <label for="entregaRapida">Â¿PodrÃ­as entregar un beat con stems, BPM, tonalidad y metadata en menos de 48 horas? <span class="required-asterisk">*</span></label>
                         <select id="entregaRapida" name="entregaRapida" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="si">Sí</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="si">SÃ­</option>
                             <option value="depende">Depende del proyecto</option>
-                            <option value="ayuda">Necesitaría ayuda</option>
+                            <option value="ayuda">NecesitarÃ­a ayuda</option>
                             <option value="no">No</option>
                         </select>
                     </div>
 
                     <div class="scoring-section">
-                        <h3>📊 Puntaje de Evaluación Técnica</h3>
-                        <p class="small-text">Será evaluado internamente por el equipo de PRODUCERS GO</p>
+                        <h3>ðŸ“Š Puntaje de EvaluaciÃ³n TÃ©cnica</h3>
+                        <p class="small-text">SerÃ¡ evaluado internamente por el equipo de PRODUCERS GO</p>
                         <table class="scoring-table">
                             <tr>
                                 <th>Criterio</th>
@@ -737,7 +739,7 @@
                                 <td>1 a 10</td>
                             </tr>
                             <tr>
-                                <td>Organización de archivos</td>
+                                <td>OrganizaciÃ³n de archivos</td>
                                 <td>1 a 10</td>
                             </tr>
                             <tr>
@@ -756,43 +758,43 @@
                     </div>
                 </div>
 
-                <!-- MÓDULO 4: EVALUACIÓN HUMANA Y ACTITUDINAL -->
+                <!-- MÃ“DULO 4: EVALUACIÃ“N HUMANA Y ACTITUDINAL -->
                 <div class="module">
-                    <span class="section-counter">MÓDULO 4</span>
-                    <h2>👥 Evaluación Humana y Actitudinal</h2>
+                    <span class="section-counter">MÃ“DULO 4</span>
+                    <h2>ðŸ‘¥ EvaluaciÃ³n Humana y Actitudinal</h2>
                     <p class="module-description">Evaluamos compatibilidad con PRODUCERS GO como comunidad, equipo y ecosistema. Tan importante como lo musical.</p>
 
                     <div class="form-group">
-                        <label for="porqueUnirse">¿Por qué querés sumarte a PRODUCERS GO? <span class="required-asterisk">*</span></label>
-                        <span class="label-info">Buena señal: "Quiero crecer, colaborar, monetizar mi catálogo y formar parte de un equipo"</span>
-                        <textarea id="porqueUnirse" name="porqueUnirse" placeholder="Cuéntanos tu motivación..." required></textarea>
+                        <label for="porqueUnirse">Â¿Por quÃ© querÃ©s sumarte a PRODUCERS GO? <span class="required-asterisk">*</span></label>
+                        <span class="label-info">Buena seÃ±al: "Quiero crecer, colaborar, monetizar mi catÃ¡logo y formar parte de un equipo"</span>
+                        <textarea id="porqueUnirse" name="porqueUnirse" placeholder="CuÃ©ntanos tu motivaciÃ³n..." required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="esperativas">¿Qué esperás recibir del ecosistema? <span class="required-asterisk">*</span></label>
+                        <label for="esperativas">Â¿QuÃ© esperÃ¡s recibir del ecosistema? <span class="required-asterisk">*</span></label>
                         <div class="checkbox-group">
                             <label><input type="checkbox" name="esperativas" value="conexiones"> Conexiones</label>
-                            <label><input type="checkbox" name="esperativas" value="formacion"> Formación</label>
-                            <label><input type="checkbox" name="esperativas" value="monetizacion"> Monetización</label>
-                            <label><input type="checkbox" name="esperativas" value="distribucion"> Distribución</label>
+                            <label><input type="checkbox" name="esperativas" value="formacion"> FormaciÃ³n</label>
+                            <label><input type="checkbox" name="esperativas" value="monetizacion"> MonetizaciÃ³n</label>
+                            <label><input type="checkbox" name="esperativas" value="distribucion"> DistribuciÃ³n</label>
                             <label><input type="checkbox" name="esperativas" value="artistas"> Oportunidades con artistas</label>
-                            <label><input type="checkbox" name="esperativas" value="catalogo"> Organización de catálogo</label>
+                            <label><input type="checkbox" name="esperativas" value="catalogo"> OrganizaciÃ³n de catÃ¡logo</label>
                             <label><input type="checkbox" name="esperativas" value="comunidad"> Comunidad</label>
-                            <label><input type="checkbox" name="esperativas" value="inversion"> Inversión</label>
-                            <label><input type="checkbox" name="esperativas" value="mentoria"> Mentoría</label>
+                            <label><input type="checkbox" name="esperativas" value="inversion"> InversiÃ³n</label>
+                            <label><input type="checkbox" name="esperativas" value="mentoria"> MentorÃ­a</label>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="aportes">¿Qué estás dispuesto a aportar al ecosistema además de beats? <span class="required-asterisk">*</span></label>
-                        <span class="label-info">Ideas, contactos, tiempo, diseño, edición, marketing, redes, mezcla, mastering, mentoría, etc.</span>
-                        <textarea id="aportes" name="aportes" placeholder="¿Qué podés aportar además de tu música?" required></textarea>
+                        <label for="aportes">Â¿QuÃ© estÃ¡s dispuesto a aportar al ecosistema ademÃ¡s de beats? <span class="required-asterisk">*</span></label>
+                        <span class="label-info">Ideas, contactos, tiempo, diseÃ±o, ediciÃ³n, marketing, redes, mezcla, mastering, mentorÃ­a, etc.</span>
+                        <textarea id="aportes" name="aportes" placeholder="Â¿QuÃ© podÃ©s aportar ademÃ¡s de tu mÃºsica?" required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="feedback">¿Cómo reaccionás cuando otro productor o director artístico te da una corrección? <span class="required-asterisk">*</span></label>
+                        <label for="feedback">Â¿CÃ³mo reaccionÃ¡s cuando otro productor o director artÃ­stico te da una correcciÃ³n? <span class="required-asterisk">*</span></label>
                         <select id="feedback" name="feedback" required>
-                            <option value="">-- Selecciona una opción --</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
                             <option value="escucho">Escucho y pruebo la sugerencia</option>
                             <option value="cuesta">Me cuesta, pero lo intento</option>
                             <option value="defiendo">Defiendo mi idea primero</option>
@@ -801,70 +803,70 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="colaboracion">¿Preferís trabajar solo o en colaboración? <span class="required-asterisk">*</span></label>
+                        <label for="colaboracion">Â¿PreferÃ­s trabajar solo o en colaboraciÃ³n? <span class="required-asterisk">*</span></label>
                         <select id="colaboracion" name="colaboracion" required>
-                            <option value="">-- Selecciona una opción --</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
                             <option value="solo">Solo</option>
-                            <option value="colaboracion">En colaboración</option>
+                            <option value="colaboracion">En colaboraciÃ³n</option>
                             <option value="depende">Depende del proyecto</option>
-                            <option value="aprender">Me interesa aprender a colaborar más</option>
+                            <option value="aprender">Me interesa aprender a colaborar mÃ¡s</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="desacuerdos">¿Cómo manejás los desacuerdos sobre porcentajes, créditos o decisiones creativas? <span class="required-asterisk">*</span></label>
+                        <label for="desacuerdos">Â¿CÃ³mo manejÃ¡s los desacuerdos sobre porcentajes, crÃ©ditos o decisiones creativas? <span class="required-asterisk">*</span></label>
                         <span class="label-info">Madurez profesional es importante</span>
-                        <textarea id="desacuerdos" name="desacuerdos" placeholder="¿Cómo resolvés conflictos?" required></textarea>
+                        <textarea id="desacuerdos" name="desacuerdos" placeholder="Â¿CÃ³mo resolvÃ©s conflictos?" required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="fortaleza">¿Cuál considerás que es tu mayor fortaleza personal? <span class="required-asterisk">*</span></label>
+                        <label for="fortaleza">Â¿CuÃ¡l considerÃ¡s que es tu mayor fortaleza personal? <span class="required-asterisk">*</span></label>
                         <select id="fortaleza" name="fortaleza" required>
-                            <option value="">-- Selecciona una opción --</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
                             <option value="disciplina">Disciplina</option>
                             <option value="creatividad">Creatividad</option>
                             <option value="rapidez">Rapidez</option>
                             <option value="escucha">Escucha</option>
                             <option value="liderazgo">Liderazgo</option>
-                            <option value="tecnica">Técnica</option>
+                            <option value="tecnica">TÃ©cnica</option>
                             <option value="constancia">Constancia</option>
-                            <option value="vision">Visión comercial</option>
+                            <option value="vision">VisiÃ³n comercial</option>
                             <option value="otra">Otra</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="debilidad">¿Cuál considerás que es tu mayor debilidad? <span class="required-asterisk">*</span></label>
-                        <span class="label-info">Honestidad es importante aquí</span>
-                        <textarea id="debilidad" name="debilidad" placeholder="¿En qué necesitás mejorar?" required></textarea>
+                        <label for="debilidad">Â¿CuÃ¡l considerÃ¡s que es tu mayor debilidad? <span class="required-asterisk">*</span></label>
+                        <span class="label-info">Honestidad es importante aquÃ­</span>
+                        <textarea id="debilidad" name="debilidad" placeholder="Â¿En quÃ© necesitÃ¡s mejorar?" required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="horasSemana">¿Cuántas horas reales por semana podrías dedicar a PRODUCERS GO? <span class="required-asterisk">*</span></label>
+                        <label for="horasSemana">Â¿CuÃ¡ntas horas reales por semana podrÃ­as dedicar a PRODUCERS GO? <span class="required-asterisk">*</span></label>
                         <select id="horasSemana" name="horasSemana" required>
-                            <option value="">-- Selecciona una opción --</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
                             <option value="1_3">1 a 3 horas</option>
                             <option value="4_6">4 a 6 horas</option>
                             <option value="7_10">7 a 10 horas</option>
-                            <option value="mas_10">Más de 10 horas</option>
+                            <option value="mas_10">MÃ¡s de 10 horas</option>
                             <option value="proyecto">Solo por proyecto</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="procesos">¿Estás dispuesto a respetar procesos internos, reglas de entrega, confidencialidad y acuerdos de porcentajes? <span class="required-asterisk">*</span></label>
+                        <label for="procesos">Â¿EstÃ¡s dispuesto a respetar procesos internos, reglas de entrega, confidencialidad y acuerdos de porcentajes? <span class="required-asterisk">*</span></label>
                         <select id="procesos" name="procesos" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="si">Sí</option>
-                            <option value="casos">Sí, pero quiero revisar cada caso</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="si">SÃ­</option>
+                            <option value="casos">SÃ­, pero quiero revisar cada caso</option>
                             <option value="depende">Depende</option>
                             <option value="no">No</option>
                         </select>
                     </div>
 
                     <div class="scoring-section">
-                        <h3>📊 Puntaje de Evaluación Humana</h3>
-                        <p class="small-text">Será evaluado internamente por el equipo de PRODUCERS GO</p>
+                        <h3>ðŸ“Š Puntaje de EvaluaciÃ³n Humana</h3>
+                        <p class="small-text">SerÃ¡ evaluado internamente por el equipo de PRODUCERS GO</p>
                         <table class="scoring-table">
                             <tr>
                                 <th>Criterio</th>
@@ -875,7 +877,7 @@
                                 <td>1 a 10</td>
                             </tr>
                             <tr>
-                                <td>Comunicación</td>
+                                <td>ComunicaciÃ³n</td>
                                 <td>1 a 10</td>
                             </tr>
                             <tr>
@@ -902,45 +904,45 @@
                     </div>
                 </div>
 
-                <!-- MÓDULO 5: EVALUACIÓN ORGANIZATIVA -->
+                <!-- MÃ“DULO 5: EVALUACIÃ“N ORGANIZATIVA -->
                 <div class="module">
-                    <span class="section-counter">MÓDULO 5</span>
-                    <h2>📁 Evaluación Organizativa</h2>
-                    <p class="module-description">Medimos si podés integrarte profesionalmente, entregar archivos completos, ordenar catálogo y trabajar con claridad.</p>
+                    <span class="section-counter">MÃ“DULO 5</span>
+                    <h2>ðŸ“ EvaluaciÃ³n Organizativa</h2>
+                    <p class="module-description">Medimos si podÃ©s integrarte profesionalmente, entregar archivos completos, ordenar catÃ¡logo y trabajar con claridad.</p>
 
                     <div class="form-group">
-                        <label for="sistemaOrganizacion">¿Cómo organizás tus beats, sesiones o proyectos? <span class="required-asterisk">*</span></label>
+                        <label for="sistemaOrganizacion">Â¿CÃ³mo organizÃ¡s tus beats, sesiones o proyectos? <span class="required-asterisk">*</span></label>
                         <span class="label-info">Buena respuesta: "Tengo carpetas por proyecto con el beat, stems, BPM, tonalidad, versiones, referencias, metadata"</span>
                         <textarea id="sistemaOrganizacion" name="sistemaOrganizacion" placeholder="Describe tu sistema..." required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="catalogoOrdenado">¿Tenés tu catálogo ordenado actualmente? <span class="required-asterisk">*</span></label>
+                        <label for="catalogoOrdenado">Â¿TenÃ©s tu catÃ¡logo ordenado actualmente? <span class="required-asterisk">*</span></label>
                         <select id="catalogoOrdenado" name="catalogoOrdenado" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="si">Sí, totalmente ordenado</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="si">SÃ­, totalmente ordenado</option>
                             <option value="parcial">Parcialmente ordenado</option>
                             <option value="desorganizado">Tengo muchas ideas, pero desorganizadas</option>
-                            <option value="no">No tengo un sistema de organización</option>
+                            <option value="no">No tengo un sistema de organizaciÃ³n</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="identificarObras">¿Podés identificar rápidamente qué obras están libres, vendidas, licenciadas o pendientes? <span class="required-asterisk">*</span></label>
+                        <label for="identificarObras">Â¿PodÃ©s identificar rÃ¡pidamente quÃ© obras estÃ¡n libres, vendidas, licenciadas o pendientes? <span class="required-asterisk">*</span></label>
                         <select id="identificarObras" name="identificarObras" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="si">Sí</option>
-                            <option value="algunas">Algunas sí, otras no</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="si">SÃ­</option>
+                            <option value="algunas">Algunas sÃ­, otras no</option>
                             <option value="no_seguro">No estoy seguro</option>
                             <option value="no">No llevo ese control</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="registroColaboraciones">¿Llevás registro de tus colaboraciones y porcentajes? <span class="required-asterisk">*</span></label>
+                        <label for="registroColaboraciones">Â¿LlevÃ¡s registro de tus colaboraciones y porcentajes? <span class="required-asterisk">*</span></label>
                         <select id="registroColaboraciones" name="registroColaboraciones" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="siempre">Sí, siempre</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="siempre">SÃ­, siempre</option>
                             <option value="aveces">A veces</option>
                             <option value="algunas">Solo de algunas obras</option>
                             <option value="no">No</option>
@@ -948,33 +950,33 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="informacionProduccion">¿Guardás información básica de cada producción? <span class="required-asterisk">*</span></label>
-                        <span class="label-info">Título, BPM, tonalidad, género, fecha, colaboradores, samples, porcentajes, estado comercial, links</span>
+                        <label for="informacionProduccion">Â¿GuardÃ¡s informaciÃ³n bÃ¡sica de cada producciÃ³n? <span class="required-asterisk">*</span></label>
+                        <span class="label-info">TÃ­tulo, BPM, tonalidad, gÃ©nero, fecha, colaboradores, samples, porcentajes, estado comercial, links</span>
                         <select id="informacionProduccion" name="informacionProduccion" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="todo">Sí, toda la información</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="todo">SÃ­, toda la informaciÃ³n</option>
                             <option value="parcial">Parcialmente</option>
-                            <option value="basico">Solo lo básico</option>
+                            <option value="basico">Solo lo bÃ¡sico</option>
                             <option value="no">No llevo registro</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="entregaProfesional">¿Podés entregar una carpeta profesional de un beat o canción? <span class="required-asterisk">*</span></label>
-                        <span class="label-info">Debería incluir: WAV, MP3, stems, BPM, tonalidad, metadata, créditos, declaración de samples, versión demo/master</span>
+                        <label for="entregaProfesional">Â¿PodÃ©s entregar una carpeta profesional de un beat o canciÃ³n? <span class="required-asterisk">*</span></label>
+                        <span class="label-info">DeberÃ­a incluir: WAV, MP3, stems, BPM, tonalidad, metadata, crÃ©ditos, declaraciÃ³n de samples, versiÃ³n demo/master</span>
                         <select id="entregaProfesional" name="entregaProfesional" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="completo">Sí, con todo completo</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="completo">SÃ­, con todo completo</option>
                             <option value="parcial">Parcialmente</option>
-                            <option value="basico">Lo básico</option>
+                            <option value="basico">Lo bÃ¡sico</option>
                             <option value="no">No</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="tiemposEntrega">¿Cómo manejás los tiempos de entrega? <span class="required-asterisk">*</span></label>
+                        <label for="tiemposEntrega">Â¿CÃ³mo manejÃ¡s los tiempos de entrega? <span class="required-asterisk">*</span></label>
                         <select id="tiemposEntrega" name="tiemposEntrega" required>
-                            <option value="">-- Selecciona una opción --</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
                             <option value="cumplo">Cumplo fechas</option>
                             <option value="aviso">A veces me atraso, pero aviso</option>
                             <option value="dificil">Me cuesta organizar tiempos</option>
@@ -983,7 +985,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="herramientasOrganizacion">¿Usás alguna herramienta para organizarte? <span class="required-asterisk">*</span></label>
+                        <label for="herramientasOrganizacion">Â¿UsÃ¡s alguna herramienta para organizarte? <span class="required-asterisk">*</span></label>
                         <div class="checkbox-group">
                             <label><input type="checkbox" name="herramientasOrganizacion" value="gdrive"> Google Drive</label>
                             <label><input type="checkbox" name="herramientasOrganizacion" value="notion"> Notion</label>
@@ -997,30 +999,30 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="sistemaProducersGo">¿Estás dispuesto a usar el sistema interno de organización de PRODUCERS GO? <span class="required-asterisk">*</span></label>
+                        <label for="sistemaProducersGo">Â¿EstÃ¡s dispuesto a usar el sistema interno de organizaciÃ³n de PRODUCERS GO? <span class="required-asterisk">*</span></label>
                         <select id="sistemaProducersGo" name="sistemaProducersGo" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="si">Sí</option>
-                            <option value="con_explicacion">Sí, si me explican el proceso</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="si">SÃ­</option>
+                            <option value="con_explicacion">SÃ­, si me explican el proceso</option>
                             <option value="depende">Depende</option>
                             <option value="no">No</option>
                         </select>
                     </div>
 
                     <div class="scoring-section">
-                        <h3>📊 Puntaje de Evaluación Organizativa</h3>
-                        <p class="small-text">Será evaluado internamente por el equipo de PRODUCERS GO</p>
+                        <h3>ðŸ“Š Puntaje de EvaluaciÃ³n Organizativa</h3>
+                        <p class="small-text">SerÃ¡ evaluado internamente por el equipo de PRODUCERS GO</p>
                         <table class="scoring-table">
                             <tr>
                                 <th>Criterio</th>
                                 <th>Rango</th>
                             </tr>
                             <tr>
-                                <td>Orden de catálogo</td>
+                                <td>Orden de catÃ¡logo</td>
                                 <td>1 a 10</td>
                             </tr>
                             <tr>
-                                <td>Organización de archivos</td>
+                                <td>OrganizaciÃ³n de archivos</td>
                                 <td>1 a 10</td>
                             </tr>
                             <tr>
@@ -1032,7 +1034,7 @@
                                 <td>1 a 10</td>
                             </tr>
                             <tr>
-                                <td>Uso de herramientas de gestión</td>
+                                <td>Uso de herramientas de gestiÃ³n</td>
                                 <td>1 a 10</td>
                             </tr>
                             <tr>
@@ -1043,137 +1045,137 @@
                     </div>
                 </div>
 
-                <!-- MÓDULO 6: EVALUACIÓN COMERCIAL Y DE CATÁLOGO -->
+                <!-- MÃ“DULO 6: EVALUACIÃ“N COMERCIAL Y DE CATÃLOGO -->
                 <div class="module">
-                    <span class="section-counter">MÓDULO 6</span>
-                    <h2>💰 Evaluación Comercial y de Catálogo</h2>
-                    <p class="module-description">Evaluamos potencial de monetización y viabilidad comercial del catálogo.</p>
+                    <span class="section-counter">MÃ“DULO 6</span>
+                    <h2>ðŸ’° EvaluaciÃ³n Comercial y de CatÃ¡logo</h2>
+                    <p class="module-description">Evaluamos potencial de monetizaciÃ³n y viabilidad comercial del catÃ¡logo.</p>
 
                     <div class="form-group">
-                        <label for="catalogo">¿Tenés catálogo propio disponible? <span class="required-asterisk">*</span></label>
+                        <label for="catalogo">Â¿TenÃ©s catÃ¡logo propio disponible? <span class="required-asterisk">*</span></label>
                         <select id="catalogo" name="catalogo" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="50_mas">Sí, más de 50 beats/canciones</option>
-                            <option value="20_50">Sí, entre 20 y 50</option>
-                            <option value="5_20">Sí, entre 5 y 20</option>
-                            <option value="poco">Tengo poco catálogo</option>
-                            <option value="no">No tengo catálogo listo</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="50_mas">SÃ­, mÃ¡s de 50 beats/canciones</option>
+                            <option value="20_50">SÃ­, entre 20 y 50</option>
+                            <option value="5_20">SÃ­, entre 5 y 20</option>
+                            <option value="poco">Tengo poco catÃ¡logo</option>
+                            <option value="no">No tengo catÃ¡logo listo</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="catalogoLibre">¿Ese catálogo está libre para ser explotado comercialmente? <span class="required-asterisk">*</span></label>
+                        <label for="catalogoLibre">Â¿Ese catÃ¡logo estÃ¡ libre para ser explotado comercialmente? <span class="required-asterisk">*</span></label>
                         <select id="catalogoLibre" name="catalogoLibre" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="todo">Sí, todo está libre</option>
-                            <option value="algunas">Algunas obras sí, otras no</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="todo">SÃ­, todo estÃ¡ libre</option>
+                            <option value="algunas">Algunas obras sÃ­, otras no</option>
                             <option value="no_seguro">No estoy seguro</option>
                             <option value="vendido">Ya fue vendido/licenciado</option>
-                            <option value="plataformas">Está subido a plataformas</option>
+                            <option value="plataformas">EstÃ¡ subido a plataformas</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="ingresos">¿Tus beats o canciones ya generaron ingresos? <span class="required-asterisk">*</span></label>
+                        <label for="ingresos">Â¿Tus beats o canciones ya generaron ingresos? <span class="required-asterisk">*</span></label>
                         <select id="ingresos" name="ingresos" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="directas">Sí, por ventas directas</option>
-                            <option value="regalias">Sí, por regalías</option>
-                            <option value="licencias">Sí, por licencias</option>
-                            <option value="no">No todavía</option>
-                            <option value="no_sé">No sé cómo monetizarlos</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="directas">SÃ­, por ventas directas</option>
+                            <option value="regalias">SÃ­, por regalÃ­as</option>
+                            <option value="licencias">SÃ­, por licencias</option>
+                            <option value="no">No todavÃ­a</option>
+                            <option value="no_sÃ©">No sÃ© cÃ³mo monetizarlos</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="plataformas">¿Tenés perfil en plataformas como BeatStars, YouTube, Spotify, SoundCloud o similares? <span class="required-asterisk">*</span></label>
-                        <span class="label-info">Proporciona los links si tenés</span>
+                        <label for="plataformas">Â¿TenÃ©s perfil en plataformas como BeatStars, YouTube, Spotify, SoundCloud o similares? <span class="required-asterisk">*</span></label>
+                        <span class="label-info">Proporciona los links si tenÃ©s</span>
                         <textarea id="plataformas" name="plataformas" placeholder="https://beatstars.com/...&#10;https://spotify.com/...&#10;https://..." required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="redesActivas">¿Tenés redes sociales activas como productor? <span class="required-asterisk">*</span></label>
+                        <label for="redesActivas">Â¿TenÃ©s redes sociales activas como productor? <span class="required-asterisk">*</span></label>
                         <textarea id="redesActivas" name="redesActivas" placeholder="@instagram&#10;@tiktok&#10;youtube.com/...&#10;..." required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="trabajoArtistas">¿Trabajaste con artistas anteriormente? <span class="required-asterisk">*</span></label>
+                        <label for="trabajoArtistas">Â¿Trabajaste con artistas anteriormente? <span class="required-asterisk">*</span></label>
                         <select id="trabajoArtistas" name="trabajoArtistas" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="lanzados">Sí, con artistas lanzados</option>
-                            <option value="no_lanzados">Sí, pero proyectos no lanzados</option>
-                            <option value="no">No todavía</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="lanzados">SÃ­, con artistas lanzados</option>
+                            <option value="no_lanzados">SÃ­, pero proyectos no lanzados</option>
+                            <option value="no">No todavÃ­a</option>
                             <option value="buscando">Estoy buscando artistas</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="publicadas">¿Tenés canciones publicadas oficialmente donde figures como productor? <span class="required-asterisk">*</span></label>
+                        <label for="publicadas">Â¿TenÃ©s canciones publicadas oficialmente donde figures como productor? <span class="required-asterisk">*</span></label>
                         <textarea id="publicadas" name="publicadas" placeholder="https://spotify.com/...&#10;https://youtube.com/...&#10;https://..."></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="objetivoComercial">¿Cuál es tu objetivo comercial? <span class="required-asterisk">*</span></label>
+                        <label for="objetivoComercial">Â¿CuÃ¡l es tu objetivo comercial? <span class="required-asterisk">*</span></label>
                         <div class="checkbox-group">
                             <label><input type="checkbox" name="objetivoComercial" value="beats"> Vender beats</label>
                             <label><input type="checkbox" name="objetivoComercial" value="placements"> Conseguir placements</label>
-                            <label><input type="checkbox" name="objetivoComercial" value="monetizar"> Monetizar catálogo</label>
+                            <label><input type="checkbox" name="objetivoComercial" value="monetizar"> Monetizar catÃ¡logo</label>
                             <label><input type="checkbox" name="objetivoComercial" value="trabajar_artistas"> Trabajar con artistas</label>
                             <label><input type="checkbox" name="objetivoComercial" value="productor_interno"> Entrar como productor interno</label>
                             <label><input type="checkbox" name="objetivoComercial" value="marca"> Desarrollar mi marca personal</label>
-                            <label><input type="checkbox" name="objetivoComercial" value="regalias"> Generar regalías a largo plazo</label>
+                            <label><input type="checkbox" name="objetivoComercial" value="regalias"> Generar regalÃ­as a largo plazo</label>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="monetizacionPg">¿Estarías dispuesto a que PRODUCERS GO administre, monetice o impulse parte de tu catálogo bajo un acuerdo de porcentajes? <span class="required-asterisk">*</span></label>
+                        <label for="monetizacionPg">Â¿EstarÃ­as dispuesto a que PRODUCERS GO administre, monetice o impulse parte de tu catÃ¡logo bajo un acuerdo de porcentajes? <span class="required-asterisk">*</span></label>
                         <select id="monetizacionPg" name="monetizacionPg" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="si">Sí</option>
-                            <option value="algunas">Sí, solo algunas obras</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="si">SÃ­</option>
+                            <option value="algunas">SÃ­, solo algunas obras</option>
                             <option value="caso">Quiero evaluarlo caso por caso</option>
                             <option value="no">No</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="inversion">¿Necesitarías inversión inicial para desarrollar o monetizar tu catálogo? <span class="required-asterisk">*</span></label>
+                        <label for="inversion">Â¿NecesitarÃ­as inversiÃ³n inicial para desarrollar o monetizar tu catÃ¡logo? <span class="required-asterisk">*</span></label>
                         <select id="inversion" name="inversion" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="si">Sí</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="si">SÃ­</option>
                             <option value="no">No</option>
                             <option value="depende">Depende del plan</option>
-                            <option value="no_sé">No sé</option>
+                            <option value="no_sÃ©">No sÃ©</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="inversion_uso">Si respondiste que sí, ¿para qué usarías esa inversión? <span class="required-asterisk">*</span></label>
+                        <label for="inversion_uso">Si respondiste que sÃ­, Â¿para quÃ© usarÃ­as esa inversiÃ³n? <span class="required-asterisk">*</span></label>
                         <div class="checkbox-group">
                             <label><input type="checkbox" name="inversion_uso" value="marketing"> Marketing</label>
                             <label><input type="checkbox" name="inversion_uso" value="mezcla"> Mezcla</label>
                             <label><input type="checkbox" name="inversion_uso" value="mastering"> Mastering</label>
                             <label><input type="checkbox" name="inversion_uso" value="videos"> Videos</label>
-                            <label><input type="checkbox" name="inversion_uso" value="campanas"> Campañas</label>
-                            <label><input type="checkbox" name="inversion_uso" value="distribucion"> Distribución</label>
-                            <label><input type="checkbox" name="inversion_uso" value="diseño"> Diseño</label>
+                            <label><input type="checkbox" name="inversion_uso" value="campanas"> CampaÃ±as</label>
+                            <label><input type="checkbox" name="inversion_uso" value="distribucion"> DistribuciÃ³n</label>
+                            <label><input type="checkbox" name="inversion_uso" value="diseÃ±o"> DiseÃ±o</label>
                             <label><input type="checkbox" name="inversion_uso" value="ads"> Ads</label>
                             <label><input type="checkbox" name="inversion_uso" value="colaboraciones"> Colaboraciones con artistas</label>
-                            <label><input type="checkbox" name="inversion_uso" value="organizacion_catalogo"> Organización del catálogo</label>
-                            <label><input type="checkbox" name="inversion_uso" value="herramientas"> Herramientas de producción</label>
+                            <label><input type="checkbox" name="inversion_uso" value="organizacion_catalogo"> OrganizaciÃ³n del catÃ¡logo</label>
+                            <label><input type="checkbox" name="inversion_uso" value="herramientas"> Herramientas de producciÃ³n</label>
                         </div>
                     </div>
 
                     <div class="scoring-section">
-                        <h3>📊 Puntaje de Evaluación Comercial</h3>
-                        <p class="small-text">Será evaluado internamente por el equipo de PRODUCERS GO</p>
+                        <h3>ðŸ“Š Puntaje de EvaluaciÃ³n Comercial</h3>
+                        <p class="small-text">SerÃ¡ evaluado internamente por el equipo de PRODUCERS GO</p>
                         <table class="scoring-table">
                             <tr>
                                 <th>Criterio</th>
                                 <th>Rango</th>
                             </tr>
                             <tr>
-                                <td>Catálogo monetizable</td>
+                                <td>CatÃ¡logo monetizable</td>
                                 <td>1 a 10</td>
                             </tr>
                             <tr>
@@ -1193,120 +1195,120 @@
                                 <td>1 a 10</td>
                             </tr>
                             <tr>
-                                <td>Proyección de marca personal</td>
+                                <td>ProyecciÃ³n de marca personal</td>
                                 <td>1 a 10</td>
                             </tr>
                         </table>
                     </div>
                 </div>
 
-                <!-- MÓDULO 7: EVALUACIÓN LEGAL -->
+                <!-- MÃ“DULO 7: EVALUACIÃ“N LEGAL -->
                 <div class="module">
-                    <span class="section-counter">MÓDULO 7</span>
-                    <h2>⚖️ Evaluación Legal</h2>
-                    <p class="module-description">Preguntas legales básicas previas. Obligatorias antes de avanzar a firma.</p>
+                    <span class="section-counter">MÃ“DULO 7</span>
+                    <h2>âš–ï¸ EvaluaciÃ³n Legal</h2>
+                    <p class="module-description">Preguntas legales bÃ¡sicas previas. Obligatorias antes de avanzar a firma.</p>
 
                     <div class="filter-critical">
-                        <strong>⚠️ PREGUNTAS CRÍTICAS:</strong> Estas respuestas pueden determinar rechazo automático o revisión obligatoria.
+                        <strong>âš ï¸ PREGUNTAS CRÃTICAS:</strong> Estas respuestas pueden determinar rechazo automÃ¡tico o revisiÃ³n obligatoria.
                     </div>
 
                     <div class="form-group">
-                        <label for="contratosVigentes">¿Tenés contrato vigente con algún sello, distribuidora, publisher, manager, productor, artista o empresa musical? <span class="required-asterisk">*</span></label>
+                        <label for="contratosVigentes">Â¿TenÃ©s contrato vigente con algÃºn sello, distribuidora, publisher, manager, productor, artista o empresa musical? <span class="required-asterisk">*</span></label>
                         <select id="contratosVigentes" name="contratosVigentes" required>
-                            <option value="">-- Selecciona una opción --</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
                             <option value="no">No</option>
-                            <option value="si">Sí</option>
+                            <option value="si">SÃ­</option>
                             <option value="no_seguro">No estoy seguro</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="detallesContratos">Si respondiste SÍ, detallá con quién, desde cuándo y qué derechos incluye el acuerdo</label>
-                        <textarea id="detallesContratos" name="detallesContratos" placeholder="Empresa/Sello - Desde cuándo - Derechos cedidos..."></textarea>
+                        <label for="detallesContratos">Si respondiste SÃ, detallÃ¡ con quiÃ©n, desde cuÃ¡ndo y quÃ© derechos incluye el acuerdo</label>
+                        <textarea id="detallesContratos" name="detallesContratos" placeholder="Empresa/Sello - Desde cuÃ¡ndo - Derechos cedidos..."></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="conflictos">¿Alguna de tus obras tiene conflictos de derechos, reclamos, strikes o disputas? <span class="required-asterisk">*</span></label>
+                        <label for="conflictos">Â¿Alguna de tus obras tiene conflictos de derechos, reclamos, strikes o disputas? <span class="required-asterisk">*</span></label>
                         <select id="conflictos" name="conflictos" required>
-                            <option value="">-- Selecciona una opción --</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
                             <option value="no">No</option>
-                            <option value="si">Sí</option>
+                            <option value="si">SÃ­</option>
                             <option value="no_seguro">No estoy seguro</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="detallesConflictos">Si respondiste SÍ, describí la situación en detalle</label>
-                        <textarea id="detallesConflictos" name="detallesConflictos" placeholder="Descripción del conflicto..."></textarea>
+                        <label for="detallesConflictos">Si respondiste SÃ, describÃ­ la situaciÃ³n en detalle</label>
+                        <textarea id="detallesConflictos" name="detallesConflictos" placeholder="DescripciÃ³n del conflicto..."></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="beatsExclusivos">¿Vendiste beats de forma exclusiva anteriormente? <span class="required-asterisk">*</span></label>
+                        <label for="beatsExclusivos">Â¿Vendiste beats de forma exclusiva anteriormente? <span class="required-asterisk">*</span></label>
                         <select id="beatsExclusivos" name="beatsExclusivos" required>
-                            <option value="">-- Selecciona una opción --</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
                             <option value="no">No</option>
-                            <option value="si">Sí</option>
+                            <option value="si">SÃ­</option>
                             <option value="aveces">Algunas veces</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="detallesExclusivos">Si respondiste SÍ, indicá cuáles y a quién fueron vendidos</label>
+                        <label for="detallesExclusivos">Si respondiste SÃ, indicÃ¡ cuÃ¡les y a quiÃ©n fueron vendidos</label>
                         <textarea id="detallesExclusivos" name="detallesExclusivos" placeholder="Beats vendidos / Comprador / Fecha..."></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="gestión">¿Tenés obras registradas en alguna sociedad de gestión o entidad? <span class="required-asterisk">*</span></label>
+                        <label for="gestiÃ³n">Â¿TenÃ©s obras registradas en alguna sociedad de gestiÃ³n o entidad? <span class="required-asterisk">*</span></label>
                         <div class="checkbox-group">
-                            <label><input type="checkbox" name="gestión" value="sadaic"> SADAIC</label>
-                            <label><input type="checkbox" name="gestión" value="dnda"> DNDA</label>
-                            <label><input type="checkbox" name="gestión" value="bmi"> BMI</label>
-                            <label><input type="checkbox" name="gestión" value="ascap"> ASCAP</label>
-                            <label><input type="checkbox" name="gestión" value="sesac"> SESAC</label>
-                            <label><input type="checkbox" name="gestión" value="otra"> Otra</label>
-                            <label><input type="checkbox" name="gestión" value="no"> No</label>
+                            <label><input type="checkbox" name="gestiÃ³n" value="sadaic"> SADAIC</label>
+                            <label><input type="checkbox" name="gestiÃ³n" value="dnda"> DNDA</label>
+                            <label><input type="checkbox" name="gestiÃ³n" value="bmi"> BMI</label>
+                            <label><input type="checkbox" name="gestiÃ³n" value="ascap"> ASCAP</label>
+                            <label><input type="checkbox" name="gestiÃ³n" value="sesac"> SESAC</label>
+                            <label><input type="checkbox" name="gestiÃ³n" value="otra"> Otra</label>
+                            <label><input type="checkbox" name="gestiÃ³n" value="no"> No</label>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="compartirDerechos">¿Compartís derechos con otros productores, compositores, músicos o artistas? <span class="required-asterisk">*</span></label>
+                        <label for="compartirDerechos">Â¿CompartÃ­s derechos con otros productores, compositores, mÃºsicos o artistas? <span class="required-asterisk">*</span></label>
                         <select id="compartirDerechos" name="compartirDerechos" required>
-                            <option value="">-- Selecciona una opción --</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
                             <option value="no">No</option>
-                            <option value="si">Sí</option>
+                            <option value="si">SÃ­</option>
                             <option value="algunos">En algunos casos</option>
                             <option value="no_seguro">No estoy seguro</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="detallesCompartir">Si respondiste SÍ, describí con quién y qué porcentajes</label>
+                        <label for="detallesCompartir">Si respondiste SÃ, describÃ­ con quiÃ©n y quÃ© porcentajes</label>
                         <textarea id="detallesCompartir" name="detallesCompartir" placeholder="Colaborador - Porcentaje - Rol..."></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="samplesNoAutorizados">¿Usaste works/samples sin autorización? <span class="required-asterisk">*</span></label>
+                        <label for="samplesNoAutorizados">Â¿Usaste works/samples sin autorizaciÃ³n? <span class="required-asterisk">*</span></label>
                         <select id="samplesNoAutorizados" name="samplesNoAutorizados" required>
-                            <option value="">-- Selecciona una opción --</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
                             <option value="no">No</option>
-                            <option value="si">Sí</option>
-                            <option value="no_sé">No sé si necesitaba autorización</option>
+                            <option value="si">SÃ­</option>
+                            <option value="no_sÃ©">No sÃ© si necesitaba autorizaciÃ³n</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="declaracionVeracidad">¿Podés declarar por escrito que las obras que presentás son propias o están debidamente autorizadas? <span class="required-asterisk">*</span></label>
+                        <label for="declaracionVeracidad">Â¿PodÃ©s declarar por escrito que las obras que presentÃ¡s son propias o estÃ¡n debidamente autorizadas? <span class="required-asterisk">*</span></label>
                         <select id="declaracionVeracidad" name="declaracionVeracidad" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="si">Sí</option>
+                            <option value="">-- Selecciona una opciÃ³n --</option>
+                            <option value="si">SÃ­</option>
                             <option value="no">No</option>
                             <option value="revisar">Necesito revisar</option>
                         </select>
                     </div>
 
                     <div class="scoring-section">
-                        <h3>📊 Evaluación Legal</h3>
-                        <p class="small-text">Revisión realizada por el equipo legal de PRODUCERS GO</p>
+                        <h3>ðŸ“Š EvaluaciÃ³n Legal</h3>
+                        <p class="small-text">RevisiÃ³n realizada por el equipo legal de PRODUCERS GO</p>
                         <table class="scoring-table">
                             <tr>
                                 <th>Aspecto Legal</th>
@@ -1340,152 +1342,152 @@
                     </div>
                 </div>
 
-                <!-- MÓDULO 8: DECLARACIONES OBLIGATORIAS -->
+                <!-- MÃ“DULO 8: DECLARACIONES OBLIGATORIAS -->
                 <div class="module">
-                    <span class="section-counter">MÓDULO 8</span>
-                    <h2>✍️ Declaraciones Obligatorias</h2>
-                    <p class="module-description">Acuerdos legales antes de procesar tu aplicación.</p>
+                    <span class="section-counter">MÃ“DULO 8</span>
+                    <h2>âœï¸ Declaraciones Obligatorias</h2>
+                    <p class="module-description">Acuerdos legales antes de procesar tu aplicaciÃ³n.</p>
 
                     <div class="declaration-box">
-                        <h4>1️⃣ Declaración de Veracidad</h4>
+                        <h4>1ï¸âƒ£ DeclaraciÃ³n de Veracidad</h4>
                         <p>
-                            Declaro bajo mi responsabilidad que toda la información entregada en esta solicitud es verdadera, 
-                            completa, verificable y reflejada fielmente. Entiendo que PRODUCERS GO podrá aceptar, rechazar o dejar 
-                            en observación mi aplicación en función de la información proporcionada.
+                            Declaro bajo mi responsabilidad que toda la informaciÃ³n entregada en esta solicitud es verdadera,
+                            completa, verificable y reflejada fielmente. Entiendo que PRODUCERS GO podrÃ¡ aceptar, rechazar o dejar
+                            en observaciÃ³n mi aplicaciÃ³n en funciÃ³n de la informaciÃ³n proporcionada.
                         </p>
                         <label>
                             <input type="checkbox" name="declaracion1" required>
-                            <strong>Acepto esta declaración</strong>
+                            <strong>Acepto esta declaraciÃ³n</strong>
                         </label>
                     </div>
 
                     <div class="declaration-box">
-                        <h4>2️⃣ Titularidad y Autorización de Obras</h4>
+                        <h4>2ï¸âƒ£ Titularidad y AutorizaciÃ³n de Obras</h4>
                         <p>
-                            Declaro que las obras, beats, fonogramas o materiales que presento en esta solicitud son propios, 
-                            resultan de mi autoría, o tengo autorización suficiente de sus titulares para presentarlos y, 
+                            Declaro que las obras, beats, fonogramas o materiales que presento en esta solicitud son propios,
+                            resultan de mi autorÃ­a, o tengo autorizaciÃ³n suficiente de sus titulares para presentarlos y,
                             eventualmente, explotarlos comercialmente dentro del ecosistema PRODUCERS GO.
                         </p>
                         <label>
                             <input type="checkbox" name="declaracion2" required>
-                            <strong>Acepto esta declaración</strong>
+                            <strong>Acepto esta declaraciÃ³n</strong>
                         </label>
                     </div>
 
                     <div class="declaration-box">
-                        <h4>3️⃣ Ausencia de Conflictos Previos</h4>
+                        <h4>3ï¸âƒ£ Ausencia de Conflictos Previos</h4>
                         <p>
-                            Declaro que no tengo compromisos previos, contratos vigentes, acuerdos de exclusividad, 
-                            demandas, reclamos legales o cualquier otro impedimento que restricja mi participación en 
-                            PRODUCERS GO o la explotación comercial de mis obras dentro del ecosistema.
+                            Declaro que no tengo compromisos previos, contratos vigentes, acuerdos de exclusividad,
+                            demandas, reclamos legales o cualquier otro impedimento que restricja mi participaciÃ³n en
+                            PRODUCERS GO o la explotaciÃ³n comercial de mis obras dentro del ecosistema.
                         </p>
                         <label>
                             <input type="checkbox" name="declaracion3" required>
-                            <strong>Acepto esta declaración</strong>
+                            <strong>Acepto esta declaraciÃ³n</strong>
                         </label>
                     </div>
 
                     <div class="declaration-box">
-                        <h4>4️⃣ Comprensión de Términos</h4>
+                        <h4>4ï¸âƒ£ ComprensiÃ³n de TÃ©rminos</h4>
                         <p>
-                            Comprendo que la admisión a PRODUCERS GO no implica automáticamente: inversión, lanzamiento, 
-                            distribución, contratación, adelantos, garantía de ingresos, relación laboral, relación societaria, 
-                            cesión de derechos, o cualquier otro compromiso económico o comercial más allá de la evaluación inicial.
+                            Comprendo que la admisiÃ³n a PRODUCERS GO no implica automÃ¡ticamente: inversiÃ³n, lanzamiento,
+                            distribuciÃ³n, contrataciÃ³n, adelantos, garantÃ­a de ingresos, relaciÃ³n laboral, relaciÃ³n societaria,
+                            cesiÃ³n de derechos, o cualquier otro compromiso econÃ³mico o comercial mÃ¡s allÃ¡ de la evaluaciÃ³n inicial.
                         </p>
                         <label>
                             <input type="checkbox" name="declaracion4" required>
-                            <strong>Acepto esta declaración</strong>
+                            <strong>Acepto esta declaraciÃ³n</strong>
                         </label>
                     </div>
 
                     <div class="declaration-box">
-                        <h4>5️⃣ Autorización de Revisión y Evaluación</h4>
+                        <h4>5ï¸âƒ£ AutorizaciÃ³n de RevisiÃ³n y EvaluaciÃ³n</h4>
                         <p>
-                            Autorizo a PRODUCERS GO a revisar, evaluar, auditar y conservar confidencialmente la información 
-                            y materiales que presento. Autorizo que PRODUCERS GO pueda compartir esta información internamente 
-                            con su equipo de evaluación artística, técnica, legal y comercial durante el proceso de admisión.
+                            Autorizo a PRODUCERS GO a revisar, evaluar, auditar y conservar confidencialmente la informaciÃ³n
+                            y materiales que presento. Autorizo que PRODUCERS GO pueda compartir esta informaciÃ³n internamente
+                            con su equipo de evaluaciÃ³n artÃ­stica, tÃ©cnica, legal y comercial durante el proceso de admisiÃ³n.
                         </p>
                         <label>
                             <input type="checkbox" name="declaracion5" required>
-                            <strong>Acepto esta declaración</strong>
+                            <strong>Acepto esta declaraciÃ³n</strong>
                         </label>
                     </div>
 
                     <div class="declaration-box">
-                        <h4>6️⃣ Confidencialidad Precontractual</h4>
+                        <h4>6ï¸âƒ£ Confidencialidad Precontractual</h4>
                         <p>
-                            Acepto que PRODUCERS GO no podrá explotar comercialmente el material que presento hasta que 
-                            exista un contrato firmado entre las partes. Acepto que PRODUCERS GO tratará toda la información 
-                            de forma confidencial durante la evaluación, acorde a su política de privacidad.
+                            Acepto que PRODUCERS GO no podrÃ¡ explotar comercialmente el material que presento hasta que
+                            exista un contrato firmado entre las partes. Acepto que PRODUCERS GO tratarÃ¡ toda la informaciÃ³n
+                            de forma confidencial durante la evaluaciÃ³n, acorde a su polÃ­tica de privacidad.
                         </p>
                         <label>
                             <input type="checkbox" name="declaracion6" required>
-                            <strong>Acepto esta declaración</strong>
+                            <strong>Acepto esta declaraciÃ³n</strong>
                         </label>
                     </div>
 
                     <div class="declaration-box">
-                        <h4>7️⃣ Aceptación de Resultados</h4>
+                        <h4>7ï¸âƒ£ AceptaciÃ³n de Resultados</h4>
                         <p>
-                            Entiendo que presentar esta solicitud no garantiza admisión, aceptación, clasificación 
-                            en algún modelo específico, ni genera derecho alguno sobre PRODUCERS GO. La aceptación, 
-                            el rechazo o la clasificación son decisiones discrecionales de PRODUCERS GO que podrán ser 
-                            fundamentadas o no, según corresponda.
+                            Entiendo que presentar esta solicitud no garantiza admisiÃ³n, aceptaciÃ³n, clasificaciÃ³n
+                            en algÃºn modelo especÃ­fico, ni genera derecho alguno sobre PRODUCERS GO. La aceptaciÃ³n,
+                            el rechazo o la clasificaciÃ³n son decisiones discrecionales de PRODUCERS GO que podrÃ¡n ser
+                            fundamentadas o no, segÃºn corresponda.
                         </p>
                         <label>
                             <input type="checkbox" name="declaracion7" required>
-                            <strong>Acepto esta declaración</strong>
+                            <strong>Acepto esta declaraciÃ³n</strong>
                         </label>
                     </div>
 
                     <div class="declaration-box">
-                        <h4>8️⃣ Consentimiento para Comunicación</h4>
+                        <h4>8ï¸âƒ£ Consentimiento para ComunicaciÃ³n</h4>
                         <p>
-                            Autorizo a PRODUCERS GO a utilizar mis datos de contacto (email y WhatsApp) para 
-                            comunicar resultados de la evaluación, solicitar información adicional o hacer seguimiento 
-                            de mi candidatura. Acepto recibir comunicaciones relacionadas con el proceso de admisión.
+                            Autorizo a PRODUCERS GO a utilizar mis datos de contacto (email y WhatsApp) para
+                            comunicar resultados de la evaluaciÃ³n, solicitar informaciÃ³n adicional o hacer seguimiento
+                            de mi candidatura. Acepto recibir comunicaciones relacionadas con el proceso de admisiÃ³n.
                         </p>
                         <label>
                             <input type="checkbox" name="declaracion8" required>
-                            <strong>Acepto esta declaración</strong>
+                            <strong>Acepto esta declaraciÃ³n</strong>
                         </label>
                     </div>
 
                     <div class="note">
-                        <strong>📌 Nota importante:</strong> Al hacer clic en "Enviar Solicitud", declaro que he leído, 
-                        comprendido y acepto todas las condiciones de esta solicitud de admisión. Entiendo que proporcionar 
-                        información falsa o incompleta puede resultar en el rechazo de mi candidatura.
+                        <strong>ðŸ“Œ Nota importante:</strong> Al hacer clic en "Enviar Solicitud", declaro que he leÃ­do,
+                        comprendido y acepto todas las condiciones de esta solicitud de admisiÃ³n. Entiendo que proporcionar
+                        informaciÃ³n falsa o incompleta puede resultar en el rechazo de mi candidatura.
                     </div>
                 </div>
 
-                <!-- MÓDULO 9: RESUMEN FINAL Y ENVÍO -->
+                <!-- MÃ“DULO 9: RESUMEN FINAL Y ENVÃO -->
                 <div class="module">
-                    <span class="section-counter">MÓDULO 9</span>
-                    <h2>✅ Resumen y Envío</h2>
-                    <p class="module-description">Revisa tu información antes de enviar la solicitud.</p>
+                    <span class="section-counter">MÃ“DULO 9</span>
+                    <h2>âœ… Resumen y EnvÃ­o</h2>
+                    <p class="module-description">Revisa tu informaciÃ³n antes de enviar la solicitud.</p>
 
                     <div class="form-group">
-                        <label for="terminos">He leído y acepto todos los términos de admisión <span class="required-asterisk">*</span></label>
+                        <label for="terminos">He leÃ­do y acepto todos los tÃ©rminos de admisiÃ³n <span class="required-asterisk">*</span></label>
                         <div class="checkbox-group">
                             <label>
                                 <input type="checkbox" id="terminos" name="terminos" required>
-                                Acepto los términos y condiciones
+                                Acepto los tÃ©rminos y condiciones
                             </label>
                         </div>
                     </div>
 
                     <div class="button-group">
                         <button type="reset" class="btn btn-reset">Limpiar Formulario</button>
-                        <button type="submit" class="btn btn-submit">🎵 Enviar Solicitud</button>
+                        <button type="submit" class="btn btn-submit">ðŸŽµ Enviar Solicitud</button>
                     </div>
 
                     <div class="note" style="margin-top: 20px;">
-                        <strong>⏱️ Próximos pasos:</strong>
+                        <strong>â±ï¸ PrÃ³ximos pasos:</strong>
                         <ul style="margin-top: 10px; margin-left: 20px;">
-                            <li>Recibirás un email de confirmación de recepción.</li>
-                            <li>El equipo de PRODUCERS GO evaluará tu solicitud en los próximos 5-7 días hábiles.</li>
+                            <li>RecibirÃ¡s un email de confirmaciÃ³n de recepciÃ³n.</li>
+                            <li>El equipo de PRODUCERS GO evaluarÃ¡ tu solicitud en los prÃ³ximos 5-7 dÃ­as hÃ¡biles.</li>
                             <li>Si es necesario, te contactaremos para una entrevista o aclaraciones.</li>
-                            <li>Recibirás el resultado de la evaluación con la clasificación correspondiente.</li>
+                            <li>RecibirÃ¡s el resultado de la evaluaciÃ³n con la clasificaciÃ³n correspondiente.</li>
                         </ul>
                     </div>
                 </div>
@@ -1494,13 +1496,13 @@
         </div>
 
         <div class="footer">
-            <p>© 2026 PRODUCERS GO. Todos los derechos reservados.</p>
-            <p>Política de Privacidad | Términos de Servicio | <a href="panel-admin.html" style="color: #ff6b00; text-decoration: none;">Panel de Administración</a></p>
+            <p>Â© 2026 PRODUCERS GO. Todos los derechos reservados.</p>
+            <p>PolÃ­tica de Privacidad | TÃ©rminos de Servicio | <a href="panel-admin.html" style="color: #2563eb; text-decoration: none;">Panel de AdministraciÃ³n</a></p>
         </div>
     </div>
 
     <script>
-        // SISTEMA DE IA PARA EVALUACIÓN AUTOMÁTICA
+        // SISTEMA DE IA PARA EVALUACIÃ“N AUTOMÃTICA
         class ProducerEvaluator {
             constructor() {
                 this.scores = {
@@ -1512,12 +1514,12 @@
                 };
             }
 
-            // Evaluar módulo artístico (25%)
+            // Evaluar mÃ³dulo artÃ­stico (25%)
             evaluateArtistic(form) {
                 let score = 0;
                 let count = 0;
 
-                // Géneros
+                // GÃ©neros
                 const generos = form.get('generos')?.trim() || '';
                 if (generos.length > 20) score += 1.5, count++;
                 else if (generos.length > 10) score += 1, count++;
@@ -1527,12 +1529,12 @@
                 if (referencias.length > 30) score += 1.5, count++;
                 else if (referencias.length > 15) score += 1, count++;
 
-                // Descripción sonido
+                // DescripciÃ³n sonido
                 const sonido = form.get('sonido')?.trim() || '';
                 if (sonido.length > 40) score += 1.5, count++;
                 else if (sonido.length > 20) score += 1, count++;
 
-                // Diferenciación (muy importante)
+                // DiferenciaciÃ³n (muy importante)
                 const diferenciacion = form.get('diferenciacion')?.trim() || '';
                 if (diferenciacion.length > 50) score += 2, count++;
                 else if (diferenciacion.length > 30) score += 1.5, count++;
@@ -1557,7 +1559,7 @@
                 return this.scores.artistico;
             }
 
-            // Evaluar módulo técnico (20%)
+            // Evaluar mÃ³dulo tÃ©cnico (20%)
             evaluateTechnical(form) {
                 let score = 0;
                 let count = 0;
@@ -1589,7 +1591,7 @@
                 score += bpmMap[bpm] || 0;
                 count++;
 
-                // Organización
+                // OrganizaciÃ³n
                 const org = form.get('organizacion')?.trim() || '';
                 if (org.length > 30) score += 2.5, count++;
                 else if (org.length > 10) score += 1.5, count++;
@@ -1612,9 +1614,9 @@
                 score += samplesMap[samples] || 0;
                 count++;
 
-                // Demostración de licencias
+                // DemostraciÃ³n de licencias
                 const demostracion = form.get('demostracionLicencias') || '';
-                const demoMap = { 'si': 2, 'aveces': 1.5, 'no': 0.5, 'no_sé': 0 };
+                const demoMap = { 'si': 2, 'aveces': 1.5, 'no': 0.5, 'no_sÃ©': 0 };
                 score += demoMap[demostracion] || 0;
                 count++;
 
@@ -1622,12 +1624,12 @@
                 return this.scores.tecnico;
             }
 
-            // Evaluar módulo humano (20%)
+            // Evaluar mÃ³dulo humano (20%)
             evaluateHuman(form) {
                 let score = 0;
                 let count = 0;
 
-                // Motivación
+                // MotivaciÃ³n
                 const motivacion = form.get('porqueUnirse')?.trim() || '';
                 if (motivacion.length > 50) score += 2, count++;
                 else if (motivacion.length > 20) score += 1.5, count++;
@@ -1648,7 +1650,7 @@
                 score += feedbackMap[feedback] || 0;
                 count++;
 
-                // Colaboración
+                // ColaboraciÃ³n
                 const colaboracion = form.get('colaboracion') || '';
                 const colabMap = { 'colaboracion': 3, 'depende': 2.5, 'aprender': 2.5, 'solo': 1 };
                 score += colabMap[colaboracion] || 0;
@@ -1670,7 +1672,7 @@
                 score += horasMap[horas] || 0;
                 count++;
 
-                // Aceptación de procesos
+                // AceptaciÃ³n de procesos
                 const procesos = form.get('procesos') || '';
                 const procesosMap = { 'si': 3, 'casos': 2, 'depende': 1.5, 'no': 0 };
                 score += procesosMap[procesos] || 0;
@@ -1680,17 +1682,17 @@
                 return this.scores.humano;
             }
 
-            // Evaluar módulo organizativo (20%)
+            // Evaluar mÃ³dulo organizativo (20%)
             evaluateOrganization(form) {
                 let score = 0;
                 let count = 0;
 
-                // Sistema de organización
+                // Sistema de organizaciÃ³n
                 const sistema = form.get('sistemaOrganizacion')?.trim() || '';
                 if (sistema.length > 40) score += 2.5, count++;
                 else if (sistema.length > 15) score += 1.5, count++;
 
-                // Catálogo ordenado
+                // CatÃ¡logo ordenado
                 const catalogo = form.get('catalogoOrdenado') || '';
                 const catMap = { 'si': 3, 'parcial': 2, 'desorganizado': 1, 'no': 0.5 };
                 score += catMap[catalogo] || 0;
@@ -1708,7 +1710,7 @@
                 score += regMap[registro] || 0;
                 count++;
 
-                // Información producción
+                // InformaciÃ³n producciÃ³n
                 const info = form.get('informacionProduccion') || '';
                 const infoMap = { 'todo': 3, 'parcial': 2, 'basico': 1.5, 'no': 0.5 };
                 score += infoMap[info] || 0;
@@ -1741,18 +1743,18 @@
                 return this.scores.organizativo;
             }
 
-            // Evaluar módulo comercial (15%)
+            // Evaluar mÃ³dulo comercial (15%)
             evaluateCommercial(form) {
                 let score = 0;
                 let count = 0;
 
-                // Catálogo
+                // CatÃ¡logo
                 const catVol = form.get('catalogo') || '';
                 const volMap = { '50_mas': 3, '20_50': 2.5, '5_20': 2, 'poco': 1.5, 'no': 0.5 };
                 score += volMap[catVol] || 0;
                 count++;
 
-                // Catálogo libre
+                // CatÃ¡logo libre
                 const libre = form.get('catalogoLibre') || '';
                 const libreMap = { 'todo': 3, 'algunas': 2, 'no_seguro': 1.5, 'vendido': 1, 'plataformas': 0.5 };
                 score += libreMap[libre] || 0;
@@ -1760,7 +1762,7 @@
 
                 // Ingresos
                 const ingresos = form.get('ingresos') || '';
-                const ingresosMap = { 'directas': 2.5, 'regalias': 3, 'licencias': 3, 'no': 1, 'no_sé': 0.5 };
+                const ingresosMap = { 'directas': 2.5, 'regalias': 3, 'licencias': 3, 'no': 1, 'no_sÃ©': 0.5 };
                 score += ingresosMap[ingresos] || 0;
                 count++;
 
@@ -1786,7 +1788,7 @@
                 if (objetivos >= 3) score += 2, count++;
                 else if (objetivos >= 1) score += 1.5, count++;
 
-                // Monetización
+                // MonetizaciÃ³n
                 const monetizacion = form.get('monetizacionPg') || '';
                 const monMap = { 'si': 3, 'algunas': 2.5, 'caso': 2, 'no': 0.5 };
                 score += monMap[monetizacion] || 0;
@@ -1861,16 +1863,16 @@
             localStorage.setItem('pg_applications', JSON.stringify(applications));
         }
 
-        // Cálculo de progreso y evaluación en tiempo real
+        // CÃ¡lculo de progreso y evaluaciÃ³n en tiempo real
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('admissionForm');
             const progressBar = document.getElementById('progressBar');
             const evaluator = new ProducerEvaluator();
-            
+
             function updateProgress() {
                 const inputs = form.querySelectorAll('input, textarea, select');
                 let filled = 0;
-                
+
                 inputs.forEach(input => {
                     if (input.type === 'checkbox' || input.type === 'radio') {
                         if (input.checked) filled++;
@@ -1878,43 +1880,43 @@
                         filled++;
                     }
                 });
-                
+
                 const progress = (filled / inputs.length) * 100;
                 progressBar.style.width = progress + '%';
-                
-                // Actualizar evaluación en tiempo real
+
+                // Actualizar evaluaciÃ³n en tiempo real
                 updateEvaluation();
             }
-            
+
             function updateEvaluation() {
                 const formData = new FormData(form);
                 const finalScore = evaluator.evaluate(formData);
                 const classification = evaluator.getClassification();
-                
-                // Guardar evaluación temporal
+
+                // Guardar evaluaciÃ³n temporal
                 const evaluation = {
                     scores: evaluator.scores,
                     finalScore: finalScore.toFixed(2),
                     classification: classification
                 };
-                
+
                 // Mostrar en consola para debug
-                console.log('Evaluación en tiempo real:', evaluation);
+                console.log('EvaluaciÃ³n en tiempo real:', evaluation);
             }
-            
+
             // Monitorear cambios
             form.addEventListener('change', updateProgress);
             form.addEventListener('input', updateProgress);
-            
-            // Envío del formulario
+
+            // EnvÃ­o del formulario
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                
+
                 // Evaluar con IA
                 const formData = new FormData(form);
                 const finalScore = evaluator.evaluate(formData);
                 const classification = evaluator.getClassification();
-                
+
                 // Crear objeto de solicitud
                 const applicationData = {
                     id: Date.now(),
@@ -1932,31 +1934,31 @@
                     classification: classification,
                     status: 'pending'
                 };
-                
-                // Validación de filtros críticos
+
+                // ValidaciÃ³n de filtros crÃ­ticos
                 const samplesResponse = form.get('usaSamples');
                 const conflictosResponse = form.get('conflictos');
                 const samplesNoAuth = form.get('samplesNoAutorizados');
-                
+
                 let warnings = [];
                 let errors = [];
-                
+
                 if (conflictosResponse === 'si') {
-                    errors.push('❌ Tienes conflictos de derechos: esto puede resultar en rechazo.');
+                    errors.push('âŒ Tienes conflictos de derechos: esto puede resultar en rechazo.');
                     applicationData.status = 'rejected';
                 }
                 if (samplesNoAuth === 'si') {
-                    errors.push('❌ Usaste samples sin autorización: esto es un riesgo legal crítico.');
+                    errors.push('âŒ Usaste samples sin autorizaciÃ³n: esto es un riesgo legal crÃ­tico.');
                     applicationData.status = 'rejected';
                 }
                 if (samplesResponse === 'sin_licencia') {
-                    warnings.push('⚠️ Usas samples sin licencia: esto requiere revisión legal obligatoria.');
+                    warnings.push('âš ï¸ Usas samples sin licencia: esto requiere revisiÃ³n legal obligatoria.');
                     applicationData.status = 'review';
                 }
                 if (samplesResponse === 'ia') {
-                    warnings.push('⚠️ Usas IA en tus producciones: esto requiere declaración adicional.');
+                    warnings.push('âš ï¸ Usas IA en tus producciones: esto requiere declaraciÃ³n adicional.');
                 }
-                
+
                 // Mostrar mensajes
                 const successMsg = document.getElementById('successMessage');
                 const errorMsg = document.getElementById('errorMessage');
@@ -1964,19 +1966,19 @@
                 successMsg.style.display = 'none';
                 errorMsg.style.display = 'none';
                 warningMsg.style.display = 'none';
-                
+
                 if (errors.length > 0) {
                     errorMsg.style.display = 'block';
-                    errorMsg.innerHTML = '<strong>⚠️ EVALUACIÓN AUTOMÁTICA DE IA:</strong><br>' +
+                    errorMsg.innerHTML = '<strong>âš ï¸ EVALUACIÃ“N AUTOMÃTICA DE IA:</strong><br>' +
                         '<strong style="color: #F44336;">Puntaje Final: ' + finalScore.toFixed(2) + '/5.0</strong><br>' +
-                        '<strong>Clasificación: ' + classification.label + '</strong><br><br>' +
+                        '<strong>ClasificaciÃ³n: ' + classification.label + '</strong><br><br>' +
                         '<strong>PROBLEMAS DETECTADOS:</strong><br>' + errors.join('<br>');
                     try {
                         const result = await enviarAplicante(applicationData);
                         applicationData.id = result.id || applicationData.id;
                     } catch (error) {
                         guardarAplicanteLocal(applicationData);
-                        errorMsg.innerHTML += '<br><br><em>No se pudo guardar en Neon ahora. Se guardó localmente como respaldo.</em>';
+                        errorMsg.innerHTML += '<br><br><em>No se pudo guardar en Neon ahora. Se guardÃ³ localmente como respaldo.</em>';
                     }
                     window.scrollTo({top: 0, behavior: 'smooth'});
                     return;
@@ -1988,56 +1990,56 @@
                 } catch (error) {
                     guardarAplicanteLocal(applicationData);
                     warningMsg.style.display = 'block';
-                    warningMsg.innerHTML = '<strong>API no disponible:</strong> la solicitud se guardó localmente como respaldo. Error: ' + error.message;
+                    warningMsg.innerHTML = '<strong>API no disponible:</strong> la solicitud se guardÃ³ localmente como respaldo. Error: ' + error.message;
                 }
-                
-                // Éxito
+
+                // Ã‰xito
                 successMsg.style.display = 'block';
-                successMsg.innerHTML = '<strong>✅ ¡Solicitud enviada exitosamente!</strong><br>' +
-                    '<strong style="color: #ff6b00;">Evaluación IA:</strong><br>' +
-                    '🎨 Artística: ' + evaluator.scores.artistico.toFixed(1) + '/10<br>' +
-                    '⚙️ Técnica: ' + evaluator.scores.tecnico.toFixed(1) + '/10<br>' +
-                    '👥 Humana: ' + evaluator.scores.humano.toFixed(1) + '/10<br>' +
-                    '📁 Organizativa: ' + evaluator.scores.organizativo.toFixed(1) + '/10<br>' +
-                    '💰 Comercial: ' + evaluator.scores.comercial.toFixed(1) + '/10<br><br>' +
+                successMsg.innerHTML = '<strong>âœ… Â¡Solicitud enviada exitosamente!</strong><br>' +
+                    '<strong style="color: #2563eb;">EvaluaciÃ³n IA:</strong><br>' +
+                    'ðŸŽ¨ ArtÃ­stica: ' + evaluator.scores.artistico.toFixed(1) + '/10<br>' +
+                    'âš™ï¸ TÃ©cnica: ' + evaluator.scores.tecnico.toFixed(1) + '/10<br>' +
+                    'ðŸ‘¥ Humana: ' + evaluator.scores.humano.toFixed(1) + '/10<br>' +
+                    'ðŸ“ Organizativa: ' + evaluator.scores.organizativo.toFixed(1) + '/10<br>' +
+                    'ðŸ’° Comercial: ' + evaluator.scores.comercial.toFixed(1) + '/10<br><br>' +
                     '<strong>Puntaje Final: <span style="color: ' + classification.color + ';">' + finalScore.toFixed(2) + '/5.0</span></strong><br>' +
-                    '<strong>Clasificación: <span style="color: ' + classification.color + ';">' + classification.label + ' (' + classification.model + ')</span></strong><br><br>' +
-                    'Gracias por tu interés en PRODUCERS GO.<br>' +
-                    'Recibirás un email de confirmación en los próximos minutos.<br>' +
-                    'Nuestro equipo evaluará tu solicitud en 5-7 días hábiles.';
-                
+                    '<strong>ClasificaciÃ³n: <span style="color: ' + classification.color + ';">' + classification.label + ' (' + classification.model + ')</span></strong><br><br>' +
+                    'Gracias por tu interÃ©s en PRODUCERS GO.<br>' +
+                    'RecibirÃ¡s un email de confirmaciÃ³n en los prÃ³ximos minutos.<br>' +
+                    'Nuestro equipo evaluarÃ¡ tu solicitud en 5-7 dÃ­as hÃ¡biles.';
+
                 if (warnings.length > 0) {
                     successMsg.innerHTML += '<br><br><strong style="color: #FF9800;">ADVERTENCIAS:</strong><br>' + warnings.join('<br>') +
-                        '<br><em>Tu solicitud será revisada manualmente por nuestro equipo legal.</em>';
+                        '<br><em>Tu solicitud serÃ¡ revisada manualmente por nuestro equipo legal.</em>';
                     applicationData.status = 'review';
                 }
-                
+
                 window.scrollTo({top: 0, behavior: 'smooth'});
-                
-                // Reset después de 3 segundos
+
+                // Reset despuÃ©s de 3 segundos
                 setTimeout(() => {
                     form.reset();
                 }, 3000);
             });
         });
 
-        // Validación específica para emails
+        // ValidaciÃ³n especÃ­fica para emails
         document.getElementById('email').addEventListener('change', function() {
             const email = this.value;
             if (!email.includes('@')) {
-                this.style.borderColor = '#ff6b00';
+                this.style.borderColor = '#2563eb';
             } else {
                 this.style.borderColor = '#ddd';
             }
         });
 
-        // Validación para edad mínima
+        // ValidaciÃ³n para edad mÃ­nima
         document.getElementById('edad').addEventListener('change', function() {
             const edad = parseInt(this.value);
             if (edad < 18) {
-                alert('Debes ser mayor de 18 años para aplicar.');
+                alert('Debes ser mayor de 18 aÃ±os para aplicar.');
                 this.value = '';
-                this.style.borderColor = '#ff6b00';
+                this.style.borderColor = '#2563eb';
             } else {
                 this.style.borderColor = '#ddd';
             }
