@@ -390,22 +390,17 @@ app.post('/api/enviar-email', async (req, res) => {
 app.get('/api/exportar-csv', requireFounderAuth, async (req, res) => {
   try {
     const result = await pool.query(`
-      SELECT 
-        id, nombre, nombre_artistico, email, whatsapp,
-        score_artistico, score_tecnico, score_humano,
-        score_organizativo, score_comercial,
-        puntaje_final, modelo_clasificacion, estado,
-        created_at
-      FROM aplicantes
+      SELECT * FROM aplicantes
       ORDER BY created_at DESC
     `);
 
     // Generar CSV
-    let csv = 'ID,Nombre,Artístico,Email,WhatsApp,Artística,Técnica,Humana,Organizativa,Comercial,Puntaje Final,Modelo,Estado,Fecha\n';
+    let csv='ID,Nombre,Nombre Artistico,Email,WhatsApp,Edad,Pais,Estado,Fecha,DatosCompletos\n';
     
     result.rows.forEach(row => {
-      csv += `"${row.id}","${row.nombre}","${row.nombre_artistico}","${row.email}","${row.whatsapp}",${row.score_artistico},${row.score_tecnico},${row.score_humano},${row.score_organizativo},${row.score_comercial},${row.puntaje_final},"${row.modelo_clasificacion}","${row.estado}","${row.created_at}"\n`;
-    });
+csv += `"${row.id}","${row.nombre||''}","${row.nombre_artistico||''}","${row.email||''}","${row.whatsapp||''}","${row.edad||''}","${row.pais||''}","${row.estado||''}","${row.created_at||''}","${String(row.datos_completos||'').replace(/"/g,'""')}"
+`;
+});
 
     res.setHeader('Content-Type', 'text/csv');
     res.setHeader('Content-Disposition', 'attachment; filename="aplicantes.csv"');
