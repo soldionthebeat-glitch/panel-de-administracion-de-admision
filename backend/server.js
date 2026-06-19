@@ -387,29 +387,137 @@ app.post('/api/enviar-email', async (req, res) => {
 });
 
 // ✅ GET - Exportar datos como CSV
+function escapeCsvCell(value) {
+  if (value === null || value === undefined) return '""';
+  const text = Array.isArray(value) ? value.join(' | ') : String(value);
+  return `"${text.replace(/"/g, '""')}"`;
+}
+
+function parseDatosCompletos(raw) {
+  if (!raw) return {};
+  if (typeof raw === 'object') return raw;
+  try {
+    return JSON.parse(raw);
+  } catch (err) {
+    return {};
+  }
+}
+
+function collectResponseKeys(rows) {
+  const keys = new Set();
+  rows.forEach((row) => {
+    const datos = parseDatosCompletos(row.datos_completos);
+    const responses = datos.responses || {};
+    Object.keys(responses).forEach((key) => keys.add(key));
+  });
+  return Array.from(keys).sort();
+}
+
+function buildApplicantsCsv(rows) {
+  const responseKeys = collectResponseKeys(rows);
+  const baseHeaders = [
+    'ID',
+    'Nombre',
+    'Nombre Artístico',
+    'Email',
+    'WhatsApp',
+    'Edad',
+    'País',
+    'Score Artístico',
+    'Score Técnico',
+    'Score Humano',
+    'Score Organizativo',
+    'Score Comercial',
+    'Puntaje Final',
+    'Modelo',
+    'Estado',
+    'Fecha'
+  ];
+  const headers = [...baseHeaders, ...responseKeys.map((key) => `Respuesta: ${key}`)];
+
+  let csv = `${headers.map(escapeCsvCell).join(',')}\n`;
+
+  rows.forEach((row) => {
+    const datos = parseDatosCompletos(row.datos_completos);
+    const responses = datos.responses || {};
+    const baseValues = [
+      row.id,
+      row.nombre,
+      row.nombre_artistico,
+      row.email,
+      row.whatsapp,
+      row.edad,
+      row.pais,
+      row.score_artistico,
+      row.score_tecnico,
+      row.score_humano,
+      row.score_organizativo,
+      row.score_comercial,
+      row.puntaje_final,
+      row.modelo_clasificacion,
+      row.estado,
+      row.created_at
+    ];
+    const responseValues = responseKeys.map((key) => responses[key] ?? '');
+    csv += `${[...baseValues, ...responseValues].map(escapeCsvCell).join(',')}\n`;
+  });
+
+  return csv;
+}
+
 app.get('/api/exportar-csv', requireFounderAuth, async (req, res) => {
   try {
     const result = await pool.query(`
-      SELECT * FROM aplicantes
+      SELECT *
+      FROM aplicantes
       ORDER BY created_at DESC
     `);
 
-    // Generar CSV
-    let csv='ID,Nombre,Nombre Artistico,Email,WhatsApp,Edad,Pais,Estado,Fecha,DatosCompletos\n';
-    
-    result.rows.forEach(row => {
-csv += `"${row.id}","${row.nombre||''}","${row.nombre_artistico||''}","${row.email||''}","${row.whatsapp||''}","${row.edad||''}","${row.pais||''}","${row.estado||''}","${row.created_at||''}","${String(row.datos_completos||'').replace(/"/g,'""')}"
-`;
-});
+    const csv = buildApplicantsCsv(result.rows);
 
-    res.setHeader('Content-Type', 'text/csv');
-    res.setHeader('Content-Disposition', 'attachment; filename="aplicantes.csv"');
-    res.send(csv);
+    res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+    res.setHeader('Content-Disposition', 'attachment; filename="aplicantes_completo.csv"');
+    res.send(`\uFEFF${csv}`);
 
   } catch (err) {
     res.status(500).json({
       success: false,
       message: '❌ Error exportando CSV',
+      error: err.message
+    });
+  }
+});
+
+app.get('/api/aplicantes/:id/exportar-csv', requireFounderAuth, async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const result = await pool.query(
+      'SELECT * FROM aplicantes WHERE id = $1',
+      [id]
+    );
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({
+        success: false,
+        message: '❌ Solicitud no encontrada'
+      });
+    }
+
+    const row = result.rows[0];
+    const csv = buildApplicantsCsv([row]);
+    const safeName = String(row.nombre_artistico || row.nombre || 'aplicante')
+      .replace(/[^a-zA-Z0-9_-]+/g, '_')
+      .slice(0, 40);
+
+    res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+    res.setHeader('Content-Disposition', `attachment; filename="aplicante_${row.id}_${safeName}.csv"`);
+    res.send(`\uFEFF${csv}`);
+
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: '❌ Error exportando CSV individual',
       error: err.message
     });
   }
